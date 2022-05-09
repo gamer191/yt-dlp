@@ -738,6 +738,7 @@ from .khanacademy import (
 from .kickstarter import KickStarterIE
 from .kinja import KinjaEmbedIE
 from .kinopoisk import KinoPoiskIE
+from .knowndrmsites import KnownDRMIE
 from .konserthusetplay import KonserthusetPlayIE
 from .koo import KooIE
 from .krasview import KrasViewIE

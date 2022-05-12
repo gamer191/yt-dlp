@@ -1,4 +1,4 @@
-from .amp import AMPIE
+from .amp import AMPIE as AMPIE
 from .common import InfoExtractor
 from ..utils import (
     parse_duration,

@@ -7,6 +7,7 @@ import struct
 import subprocess
 import sys
 import tempfile
+import time
 from datetime import datetime, timedelta, timezone
 from enum import Enum, auto
 from hashlib import pbkdf2_hmac
@@ -49,6 +50,14 @@ class YDLLogger:
         if self._ydl:
             self._ydl.report_error(message)
 
+    class ProgressBar(MultilinePrinter):
+        _DELAY, _timer = 0.1, 0
+
+        def print(self, message):
+            if time.time() - self._timer > self._DELAY:
+                self.print_at_line(f'[Cookies] {message}', 0)
+                self._timer = time.time()
+
     def progress_bar(self):
         """Return a context manager with a print method. (Optional)"""
         # Do not print to files/pipes, loggers, or when --no-progress is used
@@ -60,10 +69,7 @@ class YDLLogger:
                 return
         except BaseException:
             return
-
-        printer = MultilinePrinter(file, preserve_output=False)
-        printer.print = lambda message: printer.print_at_line(f'[Cookies] {message}', 0)
-        return printer
+        return self.ProgressBar(file, preserve_output=False)
 
 
 def _create_progress_bar(logger):
@@ -83,9 +89,12 @@ def load_cookies(cookie_file, browser_specification, ydl):
         cookie_jars.append(extract_cookies_from_browser(browser_name, profile, YDLLogger(ydl), keyring=keyring))
 
     if cookie_file is not None:
-        cookie_file = expand_path(cookie_file)
+        is_filename = YoutubeDLCookieJar.is_path(cookie_file)
+        if is_filename:
+            cookie_file = expand_path(cookie_file)
+
         jar = YoutubeDLCookieJar(cookie_file)
-        if os.access(cookie_file, os.R_OK):
+        if not is_filename or os.access(cookie_file, os.R_OK):
             jar.load(ignore_discard=True, ignore_expires=True)
         cookie_jars.append(jar)
 

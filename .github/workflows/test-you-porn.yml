@@ -1,5 +1,5 @@
 name: test-you-porn
-on: workflow_dispatch
+on: push
 jobs:
   tests:
     name: test-you-porn

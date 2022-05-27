@@ -1,0 +1,19 @@
+name: test-issue-3878
+on: [push, workflow_dispatch]
+jobs:
+  tests:
+    name: ${{ matrix.program }} (${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.6.7', '3.6', '3.7.1', '3.7', '3.8.1', '3.8', '3.9.1', '3.9', '3.10.1', '3.10', '3.11-dev', 'pypy-3.6-v7.3.3', 'pypy-3.7-v7.3.3', 'pypy-3.8-v7.3.6', 'pypy-3.9-v7.3.8', 'pypy-3.7', 'pypy-3.8', 'pypy-3.9']
+        program: ['youtube-dl', 'yt-dlp']
+    steps:
+    - uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install ${{ matrix.program }}
+      run: pip install ${{ matrix.program }}
+    - name: Run tests
+      run: ${{ matrix.program }} "https://t.co/PPJ8b8Eub4" --list-formats

@@ -1,5 +1,5 @@
 name: test-issue-3878
-on: [push, workflow_dispatch]
+on: [workflow_dispatch]
 jobs:
   tests:
     name: Python ${{ matrix.python-version }}

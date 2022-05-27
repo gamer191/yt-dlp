@@ -1,5 +1,5 @@
 name: test-you-porn
-on: [push, workflow_dispatch]
+on: [workflow_dispatch]
 jobs:
   tests:
     name: ${{ matrix.program }} (${{ matrix.python-version }})

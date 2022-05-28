@@ -2,7 +2,6 @@ import base64
 import calendar
 import copy
 import datetime
-import functools
 import hashlib
 import itertools
 import json
@@ -16,6 +15,7 @@ import time
 import traceback
 
 from .common import InfoExtractor, SearchInfoExtractor
+from ..compat import functools
 from ..compat import (
     compat_chr,
     compat_HTTPError,
@@ -534,7 +534,7 @@ class YoutubeBaseInfoExtractor(InfoExtractor):
             args, [('VISITOR_DATA', ('INNERTUBE_CONTEXT', 'client', 'visitorData'), ('responseContext', 'visitorData'))],
             expected_type=str)
 
-    @property
+    @functools.cached_property
     def is_authenticated(self):
         return bool(self._generate_sapisidhash_header())
 
@@ -3414,6 +3414,13 @@ class YoutubeIE(YoutubeBaseInfoExtractor):
             or get_first(microformats, 'lengthSeconds')
             or parse_duration(search_meta('duration'))) or None
 
+        if get_first(video_details, 'isPostLiveDvr'):
+            self.write_debug('Video is in Post-Live Manifestless mode')
+            if duration or 0 > 4 * 3600:
+                self.report_warning(
+                    'The livestream has not finished processing. Only 4 hours of the video can be currently downloaded. '
+                    'This is a known issue and patches are welcome')
+
         live_broadcast_details, is_live, streaming_data, formats = self._list_formats(
             video_id, microformats, video_details, player_responses, player_url, duration)
 
@@ -4402,7 +4409,7 @@ class YoutubeTabBaseInfoExtractor(YoutubeBaseInfoExtractor):
             check_get_keys='contents', fatal=False, ytcfg=ytcfg,
             note='Downloading API JSON with unavailable videos')
 
-    @property
+    @functools.cached_property
     def skip_webpage(self):
         return 'webpage' in self._configuration_arg('skip', ie_key=YoutubeTabIE.ie_key())
 

@@ -11,6 +11,7 @@ import sys
 import time
 import xml.etree.ElementTree
 
+from ..compat import functools, re  # isort: split
 from ..compat import (
     compat_cookiejar_Cookie,
     compat_cookies_SimpleCookie,
@@ -25,7 +26,6 @@ from ..compat import (
     compat_urllib_parse_urlencode,
     compat_urllib_request,
     compat_urlparse,
-    re,
 )
 from ..downloader import FileDownloader
 from ..downloader.f4m import get_base_url, remove_encrypted_media
@@ -610,8 +610,7 @@ class InfoExtractor:
 
             if ip_block:
                 self._x_forwarded_for_ip = GeoUtils.random_ipv4(ip_block)
-                self._downloader.write_debug(
-                    '[debug] Using fake IP %s as X-Forwarded-For' % self._x_forwarded_for_ip)
+                self.write_debug(f'Using fake IP {self._x_forwarded_for_ip} as X-Forwarded-For')
                 return
 
             # Path 2: bypassing based on country code
@@ -1034,11 +1033,19 @@ class InfoExtractor:
             expected_status=expected_status)
         return res if res is False else res[0]
 
-    def _parse_json(self, json_string, video_id, transform_source=None, fatal=True):
+    def _parse_json(self, json_string, video_id, transform_source=None, fatal=True, lenient=False):
         if transform_source:
             json_string = transform_source(json_string)
         try:
-            return json.loads(json_string, strict=False)
+            try:
+                return json.loads(json_string, strict=False)
+            except json.JSONDecodeError as e:
+                if not lenient:
+                    raise
+                try:
+                    return json.loads(json_string[:e.pos], strict=False)
+                except ValueError:
+                    raise e
         except ValueError as ve:
             errmsg = '%s: Failed to parse JSON ' % video_id
             if fatal:
@@ -1343,7 +1350,7 @@ class InfoExtractor:
         return self._og_search_property('url', html, **kargs)
 
     def _html_extract_title(self, html, name='title', *, fatal=False, **kwargs):
-        return self._html_search_regex(r'(?s)<title>([^<]+)</title>', html, name, fatal=fatal, **kwargs)
+        return self._html_search_regex(r'(?s)<title\b[^>]*>([^<]+)</title>', html, name, fatal=fatal, **kwargs)
 
     def _html_search_meta(self, name, html, display_name=None, fatal=False, **kwargs):
         name = variadic(name)
@@ -1509,8 +1516,9 @@ class InfoExtractor:
                 'url': url_or_none(e.get('contentUrl')),
                 'title': unescapeHTML(e.get('name')),
                 'description': unescapeHTML(e.get('description')),
-                'thumbnails': [{'url': url_or_none(url)}
-                               for url in variadic(traverse_obj(e, 'thumbnailUrl', 'thumbnailURL'))],
+                'thumbnails': [{'url': url}
+                               for url in variadic(traverse_obj(e, 'thumbnailUrl', 'thumbnailURL'))
+                               if url_or_none(url)],
                 'duration': parse_duration(e.get('duration')),
                 'timestamp': unified_timestamp(e.get('uploadDate')),
                 # author can be an instance of 'Organization' or 'Person' types.
@@ -2803,13 +2811,18 @@ class InfoExtractor:
                     mime_type = representation_attrib['mimeType']
                     content_type = representation_attrib.get('contentType', mime_type.split('/')[0])
 
-                    codecs = parse_codecs(representation_attrib.get('codecs', ''))
+                    codec_str = representation_attrib.get('codecs', '')
+                    # Some kind of binary subtitle found in some youtube livestreams
+                    if mime_type == 'application/x-rawcc':
+                        codecs = {'scodec': codec_str}
+                    else:
+                        codecs = parse_codecs(codec_str)
                     if content_type not in ('video', 'audio', 'text'):
                         if mime_type == 'image/jpeg':
                             content_type = mime_type
-                        elif codecs['vcodec'] != 'none':
+                        elif codecs.get('vcodec', 'none') != 'none':
                             content_type = 'video'
-                        elif codecs['acodec'] != 'none':
+                        elif codecs.get('acodec', 'none') != 'none':
                             content_type = 'audio'
                         elif codecs.get('scodec', 'none') != 'none':
                             content_type = 'text'
@@ -3596,9 +3609,7 @@ class InfoExtractor:
 
     def _get_cookies(self, url):
         """ Return a compat_cookies_SimpleCookie with the cookies for the url """
-        req = sanitized_Request(url)
-        self._downloader.cookiejar.add_cookie_header(req)
-        return compat_cookies_SimpleCookie(req.get_header('Cookie'))
+        return compat_cookies_SimpleCookie(self._downloader._calc_cookies(url))
 
     def _apply_first_set_cookie_header(self, url_handle, cookie):
         """
@@ -3639,20 +3650,17 @@ class InfoExtractor:
             t['name'] = cls.ie_key()
             yield t
 
+    @classproperty
+    def age_limit(cls):
+        """Get age limit from the testcases"""
+        return max(traverse_obj(
+            tuple(cls.get_testcases(include_onlymatching=False)),
+            (..., (('playlist', 0), None), 'info_dict', 'age_limit')) or [0])
+
     @classmethod
     def is_suitable(cls, age_limit):
-        """ Test whether the extractor is generally suitable for the given
-        age limit (i.e. pornographic sites are not, all others usually are) """
-
-        any_restricted = False
-        for tc in cls.get_testcases(include_onlymatching=False):
-            if tc.get('playlist', []):
-                tc = tc['playlist'][0]
-            is_restricted = age_restricted(tc.get('info_dict', {}).get('age_limit'), age_limit)
-            if not is_restricted:
-                return True
-            any_restricted = any_restricted or is_restricted
-        return not any_restricted
+        """Test whether the extractor is generally suitable for the given age limit"""
+        return not age_restricted(cls.age_limit, age_limit)
 
     @classmethod
     def description(cls, *, markdown=True, search_examples=None):
@@ -3745,11 +3753,15 @@ class InfoExtractor:
     def _get_automatic_captions(self, *args, **kwargs):
         raise NotImplementedError('This method must be implemented by subclasses')
 
+    @functools.cached_property
+    def _cookies_passed(self):
+        """Whether cookies have been passed to YoutubeDL"""
+        return self.get_param('cookiefile') is not None or self.get_param('cookiesfrombrowser') is not None
+
     def mark_watched(self, *args, **kwargs):
         if not self.get_param('mark_watched', False):
             return
-        if (self.supports_login() and self._get_login_info()[0] is not None
-                or self.get_param('cookiefile') or self.get_param('cookiesfrombrowser')):
+        if self.supports_login() and self._get_login_info()[0] is not None or self._cookies_passed:
             self._mark_watched(*args, **kwargs)
 
     def _mark_watched(self, *args, **kwargs):

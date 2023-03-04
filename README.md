@@ -189,9 +189,9 @@ If you [installed with PIP](https://github.com/yt-dlp/yt-dlp/wiki/Installation#w
 
 For other third-party package managers, see [the wiki](https://github.com/yt-dlp/yt-dlp/wiki/Installation#third-party-package-managers) or refer their documentation
 
-<a id="update-channels (only applicable for binaries)"/>
+<a id="update-channels"/>
 
-There are currently two release channels: `stable` and `nightly`.
+There are currently two release channels (for binaries): `stable` and `nightly`.
 `stable` is the default channel, and many of it's changes have been tested by users of the nightly channel.
 The `nightly` channel has releases built after each push to the master branch, and will have the most recent fixes and additions, but also have the potential for bugs.
 The latest `nightly` release is available as a [pre-release from this repository](https://github.com/yt-dlp/yt-dlp/releases/tag/nightly), and all `nightly` releases are [archived in their own repo](https://github.com/yt-dlp/yt-dlp-nightly-builds/releases).

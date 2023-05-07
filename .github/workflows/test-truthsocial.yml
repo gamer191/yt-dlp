@@ -12,6 +12,17 @@ jobs:
       run: pip install yt-dlp
     - name: Run tests
       run: yt-dlp "https://truthsocial.com/@KarliBonne/posts/110319486893480616" --list-formats --print-traffic
+  yt-dlp:
+    name: yt-dlp-legacy-server-connect
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/setup-python@v3
+      with:
+        python-version: 3.11-dev
+    - name: Install yt-dlp
+      run: pip install yt-dlp
+    - name: Run tests
+      run: yt-dlp "https://truthsocial.com/@KarliBonne/posts/110319486893480616" --list-formats --print-traffic --legacy-server-connect
   curl:
     runs-on: ubuntu-latest
     steps:

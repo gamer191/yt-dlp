@@ -1,5 +1,5 @@
 name: test-truthsocial
-on: [workflow_dispatch]
+on: [workflow_dispatch, push]
 jobs:
   tests:
     name: ${{ matrix.program }} (${{ matrix.python-version }})

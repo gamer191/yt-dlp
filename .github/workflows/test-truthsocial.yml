@@ -18,4 +18,4 @@ jobs:
     - name: curl
       uses: wei/curl@master
       with:
-        args: https://truthsocial.com/api/v1/statuses/110319486893480616 -H "User-Agent:hello"
+        args: https://truthsocial.com/api/v1/statuses/110319486893480616 -H "User-Agent:hello" --verbose

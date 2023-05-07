@@ -1,22 +1,17 @@
 name: test-truthsocial
-on: [workflow_dispatch, push]
+on: [workflow_dispatch]
 jobs:
   tests:
-    name: ${{ matrix.program }} (${{ matrix.python-version }})
+    name: yt-dlp
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        python-version: ['3.11-dev']
-        program: ['yt-dlp']
     steps:
     - uses: actions/setup-python@v3
       with:
-        python-version: ${{ matrix.python-version }}
-    - name: Install ${{ matrix.program }}
-      run: pip install ${{ matrix.program }}
+        python-version: 3.11-dev
+    - name: Install yt-dlp
+      run: pip install yt-dlp
     - name: Run tests
-      run: ${{ matrix.program }} "https://truthsocial.com/@KarliBonne/posts/110319486893480616" --list-formats --print-traffic
+      run: yt-dlp "https://truthsocial.com/@KarliBonne/posts/110319486893480616" --list-formats --print-traffic
   curl:
     runs-on: ubuntu-latest
     steps:

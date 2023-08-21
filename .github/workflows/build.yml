@@ -175,7 +175,7 @@ jobs:
 
 
   build_macos:
-    runs-on: macos-11
+    runs-on: macos-latest
     needs: prepare
 
     steps:

@@ -254,26 +254,6 @@ jobs:
       run: |
         echo "# This file is used for regulating self-update" >> _update_spec
         echo "lock 2022.07.18 .+ Python 3.6" >> _update_spec
-    - name: Make SHA2-SUMS files
-      run: |
-          sha256sum artifact/yt-dlp | awk '{print $1 "  yt-dlp"}' >> SHA2-256SUMS
-          sha256sum artifact/yt-dlp.tar.gz | awk '{print $1 "  yt-dlp.tar.gz"}' >> SHA2-256SUMS
-          sha256sum artifact/yt-dlp.exe | awk '{print $1 "  yt-dlp.exe"}' >> SHA2-256SUMS
-          sha256sum artifact/yt-dlp_win.zip | awk '{print $1 "  yt-dlp_win.zip"}' >> SHA2-256SUMS
-          sha256sum artifact/yt-dlp_min.exe | awk '{print $1 "  yt-dlp_min.exe"}' >> SHA2-256SUMS
-          sha256sum artifact/yt-dlp_x86.exe | awk '{print $1 "  yt-dlp_x86.exe"}' >> SHA2-256SUMS
-          sha256sum artifact/yt-dlp_macos_legacy | awk '{print $1 "  yt-dlp_macos_legacy"}' >> SHA2-256SUMS
-          sha256sum artifact/dist/yt-dlp_linux | awk '{print $1 "  yt-dlp_linux"}' >> SHA2-256SUMS
-          sha256sum artifact/dist/yt-dlp_linux.zip | awk '{print $1 "  yt-dlp_linux.zip"}' >> SHA2-256SUMS
-          sha512sum artifact/yt-dlp | awk '{print $1 "  yt-dlp"}' >> SHA2-512SUMS
-          sha512sum artifact/yt-dlp.tar.gz | awk '{print $1 "  yt-dlp.tar.gz"}' >> SHA2-512SUMS
-          sha512sum artifact/yt-dlp.exe | awk '{print $1 "  yt-dlp.exe"}' >> SHA2-512SUMS
-          sha512sum artifact/yt-dlp_win.zip | awk '{print $1 "  yt-dlp_win.zip"}' >> SHA2-512SUMS
-          sha512sum artifact/yt-dlp_min.exe | awk '{print $1 "  yt-dlp_min.exe"}' >> SHA2-512SUMS
-          sha512sum artifact/yt-dlp_x86.exe | awk '{print $1 "  yt-dlp_x86.exe"}' >> SHA2-512SUMS
-          sha512sum artifact/yt-dlp_macos_legacy | awk '{print $1 "  yt-dlp_macos_legacy"}' >> SHA2-512SUMS
-          sha512sum artifact/dist/yt-dlp_linux | awk '{print $1 "  yt-dlp_linux"}' >> SHA2-512SUMS
-          sha512sum artifact/dist/yt-dlp_linux.zip | awk '{print $1 "  yt-dlp_linux.zip"}' >> SHA2-512SUMS
 
     - name: Publish Release
       uses: yt-dlp/action-gh-release@v1
@@ -293,8 +273,6 @@ jobs:
           </p>
           </details>
         files: |
-          SHA2-256SUMS
-          SHA2-512SUMS
           artifact/yt-dlp
           artifact/yt-dlp.tar.gz
           artifact/yt-dlp.exe

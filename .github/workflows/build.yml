@@ -86,13 +86,6 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/download-artifact@v3
 
-    - name: Get Changelog
-      run: |
-        changelog=$(grep -oPz '(?s)(?<=### ${{ needs.prepare.outputs.ytdlp_version }}\n{2}).+?(?=\n{2,3}###)' Changelog.md) || true
-        echo "changelog<<EOF" >> $GITHUB_ENV
-        echo "$changelog" >> $GITHUB_ENV
-        echo "EOF" >> $GITHUB_ENV
-
     - name: Publish Release
       uses: yt-dlp/action-gh-release@v1
       with:
@@ -102,13 +95,5 @@ jobs:
         body: |
           #### [A description of the various files]((https://github.com/yt-dlp/yt-dlp#release-files)) are in the README
 
-          ---
-          <details open><summary><h3>Changelog</summary>
-          <p>
-
-          ${{ env.changelog }}
-
-          </p>
-          </details>
         files: |
           artifact/yt-dlp.exe

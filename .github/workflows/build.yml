@@ -48,88 +48,6 @@ jobs:
       run: git push origin ${{ github.event.ref }}
 
 
-  build_unix:
-    needs: prepare
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-python@v4
-      with:
-          python-version: '3.10'
-    - uses: conda-incubator/setup-miniconda@v2
-      with:
-          miniforge-variant: Mambaforge
-          use-mamba: true
-          channels: conda-forge
-          auto-update-conda: true
-          activate-environment: ''
-          auto-activate-base: false
-    - name: Install Requirements
-      run: |
-          sudo apt-get -y install zip pandoc man sed
-          python -m pip install -U pip setuptools wheel twine
-          python -m pip install -U Pyinstaller -r requirements.txt
-          reqs=$(mktemp)
-          echo -e 'python=3.10.*\npyinstaller' >$reqs
-          sed 's/^brotli.*/brotli-python/' <requirements.txt >>$reqs
-          mamba create -n build --file $reqs
-
-    - name: Prepare
-      run: |
-          python devscripts/update-version.py ${{ needs.prepare.outputs.version_suffix }}
-          python devscripts/make_lazy_extractors.py
-    - name: Build Unix platform-independent binary
-      run: |
-          make all tar
-    - name: Build Unix standalone binary
-      shell: bash -l {0}
-      run: |
-          unset LD_LIBRARY_PATH  # Harmful; set by setup-python
-          conda activate build
-          python pyinst.py --onedir
-          (cd ./dist/yt-dlp_linux && zip -r ../yt-dlp_linux.zip .)
-          python pyinst.py
-
-    - name: Upload artifacts
-      uses: actions/upload-artifact@v3
-      with:
-        path: |
-          yt-dlp
-          yt-dlp.tar.gz
-          dist/yt-dlp_linux
-          dist/yt-dlp_linux.zip
-
-    - name: Build and publish on PyPi
-      env:
-        TWINE_USERNAME: __token__
-        TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
-      if: "env.TWINE_PASSWORD != ''"
-      run: |
-        rm -rf dist/*
-        python devscripts/set-variant.py pip -M "You installed yt-dlp with pip or using the wheel from PyPi; Use that to update"
-        python setup.py sdist bdist_wheel
-        twine upload dist/*
-
-    - name: Install SSH private key for Homebrew
-      env:
-        BREW_TOKEN: ${{ secrets.BREW_TOKEN }}
-      if: "env.BREW_TOKEN != ''"
-      uses: yt-dlp/ssh-agent@v0.5.3
-      with:
-          ssh-private-key: ${{ env.BREW_TOKEN }}
-    - name: Update Homebrew Formulae
-      env:
-        BREW_TOKEN: ${{ secrets.BREW_TOKEN }}
-      if: "env.BREW_TOKEN != ''"
-      run: |
-        git clone git@github.com:yt-dlp/homebrew-taps taps/
-        python devscripts/update-formulae.py taps/Formula/yt-dlp.rb "${{ needs.prepare.outputs.ytdlp_version }}"
-        git -C taps/ config user.name github-actions
-        git -C taps/ config user.email github-actions@example.com
-        git -C taps/ commit -am 'yt-dlp: ${{ needs.prepare.outputs.ytdlp_version }}'
-        git -C taps/ push
-
   build_macos_legacy:
     runs-on: macos-latest
     needs: prepare
@@ -238,7 +156,7 @@ jobs:
     permissions:
       contents: write  # for action-gh-release
     runs-on: ubuntu-latest
-    needs: [prepare, build_unix, build_windows, build_windows32, build_macos_legacy]
+    needs: [prepare, build_windows, build_windows32, build_macos_legacy]
 
     steps:
     - uses: actions/checkout@v3
@@ -273,13 +191,9 @@ jobs:
           </p>
           </details>
         files: |
-          artifact/yt-dlp
-          artifact/yt-dlp.tar.gz
           artifact/yt-dlp.exe
           artifact/yt-dlp_win.zip
           artifact/yt-dlp_min.exe
           artifact/yt-dlp_x86.exe
           artifact/yt-dlp_macos_legacy
-          artifact/dist/yt-dlp_linux
-          artifact/dist/yt-dlp_linux.zip
           _update_spec

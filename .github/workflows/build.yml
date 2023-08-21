@@ -1,12 +1,10 @@
 name: Build
 on: workflow_dispatch
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   prepare:
-    permissions:
-      contents: write  # for push_release
     runs-on: ubuntu-latest
     outputs:
       version_suffix: ${{ steps.version_suffix.outputs.version_suffix }}
@@ -49,8 +47,6 @@ jobs:
 
 
   build_windows:
-    permissions:
-      contents: write  # for action-gh-release
     runs-on: windows-latest
     needs: prepare
 

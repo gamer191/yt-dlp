@@ -281,7 +281,7 @@ jobs:
     permissions:
       contents: write  # for action-gh-release
     runs-on: ubuntu-latest
-    needs: [prepare, build_unix, build_linux_arm, build_windows, build_windows32, build_macos, build_macos_legacy]
+    needs: [prepare, build_unix, build_linux_arm, build_windows, build_windows32, build_macos_legacy]
 
     steps:
     - uses: actions/checkout@v3

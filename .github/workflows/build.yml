@@ -48,45 +48,6 @@ jobs:
       run: git push origin ${{ github.event.ref }}
 
 
-  build_macos_legacy:
-    runs-on: macos-latest
-    needs: prepare
-
-    steps:
-    - uses: actions/checkout@v3
-    - name: Install Python
-      # We need the official Python, because the GA ones only support newer macOS versions
-      env:
-        PYTHON_VERSION: 3.10.5
-        MACOSX_DEPLOYMENT_TARGET: 10.9  # Used up by the Python build tools
-      run: |
-          # Hack to get the latest patch version. Uncomment if needed
-          #brew install python@3.10
-          #export PYTHON_VERSION=$( $(brew --prefix)/opt/python@3.10/bin/python3 --version | cut -d ' ' -f 2 )
-          curl https://www.python.org/ftp/python/${PYTHON_VERSION}/python-${PYTHON_VERSION}-macos11.pkg -o "python.pkg"
-          sudo installer -pkg python.pkg -target /
-          python3 --version
-    - name: Install Requirements
-      run: |
-          brew install coreutils
-          python3 -m pip install -U --user pip Pyinstaller -r requirements.txt
-
-    - name: Prepare
-      run: |
-          python3 devscripts/update-version.py ${{ needs.prepare.outputs.version_suffix }}
-          python3 devscripts/make_lazy_extractors.py
-    - name: Build
-      run: |
-          python3 pyinst.py
-          mv dist/yt-dlp_macos dist/yt-dlp_macos_legacy
-
-    - name: Upload artifacts
-      uses: actions/upload-artifact@v3
-      with:
-        path: |
-          dist/yt-dlp_macos_legacy
-
-
   build_windows:
     runs-on: windows-latest
     needs: prepare
@@ -156,7 +117,7 @@ jobs:
     permissions:
       contents: write  # for action-gh-release
     runs-on: ubuntu-latest
-    needs: [prepare, build_windows, build_windows32, build_macos_legacy]
+    needs: [prepare, build_windows, build_windows32]
 
     steps:
     - uses: actions/checkout@v3
@@ -168,10 +129,6 @@ jobs:
         echo "changelog<<EOF" >> $GITHUB_ENV
         echo "$changelog" >> $GITHUB_ENV
         echo "EOF" >> $GITHUB_ENV
-    - name: Make Update spec
-      run: |
-        echo "# This file is used for regulating self-update" >> _update_spec
-        echo "lock 2022.07.18 .+ Python 3.6" >> _update_spec
 
     - name: Publish Release
       uses: yt-dlp/action-gh-release@v1
@@ -195,5 +152,3 @@ jobs:
           artifact/yt-dlp_win.zip
           artifact/yt-dlp_min.exe
           artifact/yt-dlp_x86.exe
-          artifact/yt-dlp_macos_legacy
-          _update_spec

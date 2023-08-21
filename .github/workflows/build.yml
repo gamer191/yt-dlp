@@ -173,37 +173,6 @@ jobs:
         path: |  # run-on-arch-action designates armv7l as armv7
           repo/dist/yt-dlp_linux_${{ (matrix.architecture == 'armv7' && 'armv7l') || matrix.architecture }}
 
-
-  build_macos:
-    runs-on: macos-latest
-    needs: prepare
-
-    steps:
-    - uses: actions/checkout@v3
-    # NB: In order to create a universal2 application, the version of python3 in /usr/bin has to be used
-    - name: Install Requirements
-      run: |
-          brew install coreutils
-          /usr/bin/python3 -m pip install -U --user pip Pyinstaller -r requirements.txt
-
-    - name: Prepare
-      run: |
-          /usr/bin/python3 devscripts/update-version.py ${{ needs.prepare.outputs.version_suffix }}
-          /usr/bin/python3 devscripts/make_lazy_extractors.py
-    - name: Build
-      run: |
-          /usr/bin/python3 pyinst.py --target-architecture universal2 --onedir
-          (cd ./dist/yt-dlp_macos && zip -r ../yt-dlp_macos.zip .)
-          /usr/bin/python3 pyinst.py --target-architecture universal2
-
-    - name: Upload artifacts
-      uses: actions/upload-artifact@v3
-      with:
-        path: |
-          dist/yt-dlp_macos
-          dist/yt-dlp_macos.zip
-
-
   build_macos_legacy:
     runs-on: macos-latest
     needs: prepare
@@ -336,8 +305,6 @@ jobs:
           sha256sum artifact/yt-dlp_win.zip | awk '{print $1 "  yt-dlp_win.zip"}' >> SHA2-256SUMS
           sha256sum artifact/yt-dlp_min.exe | awk '{print $1 "  yt-dlp_min.exe"}' >> SHA2-256SUMS
           sha256sum artifact/yt-dlp_x86.exe | awk '{print $1 "  yt-dlp_x86.exe"}' >> SHA2-256SUMS
-          sha256sum artifact/yt-dlp_macos | awk '{print $1 "  yt-dlp_macos"}' >> SHA2-256SUMS
-          sha256sum artifact/yt-dlp_macos.zip | awk '{print $1 "  yt-dlp_macos.zip"}' >> SHA2-256SUMS
           sha256sum artifact/yt-dlp_macos_legacy | awk '{print $1 "  yt-dlp_macos_legacy"}' >> SHA2-256SUMS
           sha256sum artifact/yt-dlp_linux_armv7l | awk '{print $1 "  yt-dlp_linux_armv7l"}' >> SHA2-256SUMS
           sha256sum artifact/yt-dlp_linux_aarch64 | awk '{print $1 "  yt-dlp_linux_aarch64"}' >> SHA2-256SUMS
@@ -349,8 +316,6 @@ jobs:
           sha512sum artifact/yt-dlp_win.zip | awk '{print $1 "  yt-dlp_win.zip"}' >> SHA2-512SUMS
           sha512sum artifact/yt-dlp_min.exe | awk '{print $1 "  yt-dlp_min.exe"}' >> SHA2-512SUMS
           sha512sum artifact/yt-dlp_x86.exe | awk '{print $1 "  yt-dlp_x86.exe"}' >> SHA2-512SUMS
-          sha512sum artifact/yt-dlp_macos | awk '{print $1 "  yt-dlp_macos"}' >> SHA2-512SUMS
-          sha512sum artifact/yt-dlp_macos.zip | awk '{print $1 "  yt-dlp_macos.zip"}' >> SHA2-512SUMS
           sha512sum artifact/yt-dlp_macos_legacy | awk '{print $1 "  yt-dlp_macos_legacy"}' >> SHA2-512SUMS
           sha512sum artifact/yt-dlp_linux_armv7l | awk '{print $1 "  yt-dlp_linux_armv7l"}' >> SHA2-512SUMS
           sha512sum artifact/yt-dlp_linux_aarch64 | awk '{print $1 "  yt-dlp_linux_aarch64"}' >> SHA2-512SUMS
@@ -383,8 +348,6 @@ jobs:
           artifact/yt-dlp_win.zip
           artifact/yt-dlp_min.exe
           artifact/yt-dlp_x86.exe
-          artifact/yt-dlp_macos
-          artifact/yt-dlp_macos.zip
           artifact/yt-dlp_macos_legacy
           artifact/yt-dlp_linux_armv7l
           artifact/yt-dlp_linux_aarch64

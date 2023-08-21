@@ -68,19 +68,13 @@ jobs:
           python devscripts/make_lazy_extractors.py
     - name: Build
       run: |
-          python setup.py py2exe
-          Move-Item ./dist/yt-dlp.exe ./dist/yt-dlp_min.exe
-          python pyinst.py
           python pyinst.py --onedir
-          Compress-Archive -Path ./dist/yt-dlp/* -DestinationPath ./dist/yt-dlp_win.zip
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
       with:
         path: |
           dist/yt-dlp.exe
-          dist/yt-dlp_min.exe
-          dist/yt-dlp_win.zip
 
   publish_release:
     permissions:
@@ -118,5 +112,3 @@ jobs:
           </details>
         files: |
           artifact/yt-dlp.exe
-          artifact/yt-dlp_win.zip
-          artifact/yt-dlp_min.exe

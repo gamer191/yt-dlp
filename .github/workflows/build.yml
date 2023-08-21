@@ -68,7 +68,7 @@ jobs:
           python devscripts/make_lazy_extractors.py
     - name: Build
       run: |
-          python pyinst.py --onedir
+          python pyinst.py
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v3

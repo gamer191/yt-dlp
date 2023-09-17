@@ -1617,6 +1617,7 @@ class TwitterSpacesIE(TwitterBaseIE):
             'upload_date': '20220807',
             'release_timestamp': 1659904215,
             'release_date': '20220807',
+            'availability': 'needs_auth',
         },
         'params': {'skip_download': 'm3u8'},
     }, {
@@ -1634,6 +1635,7 @@ class TwitterSpacesIE(TwitterBaseIE):
             'upload_date': '20230413',
             'release_timestamp': 1681839000,
             'release_date': '20230418',
+            'availability': 'needs_auth',
         },
         'params': {'skip_download': 'm3u8'},
     }, {
@@ -1649,6 +1651,7 @@ class TwitterSpacesIE(TwitterBaseIE):
             'live_status': 'was_live',
             'timestamp': 1685617198,
             'upload_date': '20230601',
+            'availability': 'needs_auth',
         },
         'params': {'skip_download': 'm3u8'},
     }]
@@ -1736,6 +1739,7 @@ class TwitterSpacesIE(TwitterBaseIE):
             'timestamp': int_or_none(metadata.get('created_at'), scale=1000),
             'formats': formats,
             'http_headers': headers,
+            'availability': 'needs_auth',
         }
 
 

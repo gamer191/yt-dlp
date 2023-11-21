@@ -190,7 +190,7 @@ jobs:
         with:
           path: ./repo
       - name: Virtualized Install, Prepare & Build
-        uses: yt-dlp/run-on-arch-action@v2
+        uses: gamer191/run-on-arch-action@master
         with:
           # Ref: https://github.com/uraimo/run-on-arch-action/issues/55
           env: |

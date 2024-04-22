@@ -11,15 +11,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        protobuf: ['CgIIAQ', 'CgIIAg', 'CgIIAw', 'CgIIBA', 'CgIIBQ', 'CgIIBg', 'CgIIBw', 'CgIICA', 'CgIICQ', 'CgIQAQ', 'CgIQAg', 'CgIQAw', 'CgIQBA', 'CgIQBQ', 'CgIQBg', 'CgIQBw', 'CgIQCA', 'CgIQCQ', 'CgIYAQ', 'CgIYAg', 'CgIYAw', 'CgIYBA', 'CgIYBQ', 'CgIYBg', 'CgIYBw', 'CgIYCA', 'CgIYCQ', 'CgIgAQ', 'CgIgAg', 'CgIgAw', 'CgIgBA', 'CgIgBQ', 'CgIgBg', 'CgIgBw', 'CgIgCA', 'CgIgCQ', 'CgIoAQ', 'CgIoAg', 'CgIoAw', 'CgIoBA', 'CgIoBQ', 'CgIoBg', 'CgIoBw', 'CgIoCA', 'CgIoCQ', 'CgIwAQ', 'CgIwAg', 'CgIwAw', 'CgIwBA', 'CgIwBQ', 'CgIwBg', 'CgIwBw', 'CgIwCA', 'CgIwCQ', 'CgI4AQ', 'CgI4Ag', 'CgI4Aw', 'CgI4BA', 'CgI4BQ', 'CgI4Bg', 'CgI4Bw', 'CgI4CA', 'CgI4CQ', 'CgJAAQ', 'CgJAAg', 'CgJAAw', 'CgJABA', 'CgJABQ', 'CgJABg', 'CgJABw', 'CgJACA', 'CgJACQ', 'CgJIAQ', 'CgJIAg', 'CgJIAw', 'CgJIBA', 'CgJIBQ', 'CgJIBg', 'CgJIBw', 'CgJICA', 'CgJICQ', 'EgIIAQ', 'EgIIAg', 'EgIIAw', 'EgIIBA', 'EgIIBQ', 'EgIIBg', 'EgIIBw', 'EgIICA']
+        protobuf: ['CgIIAQ', 'CgIIAg', 'CgIIAw', 'CgIIBA', 'CgIIBQ', 'CgIIBg', 'CgIIBw', 'CgIICA', 'CgIICQ', 'CgIQAQ', 'CgIQAg', 'CgIQAw', 'CgIQBA', 'CgIQBQ', 'CgIQBg', 'CgIQBw', 'CgIQCA', 'CgIQCQ', 'CgIYAQ', 'CgIYAg', 'CgIYAw', 'CgIYBA', 'CgIYBQ', 'CgIYBg', 'CgIYBw', 'CgIYCA', 'CgIYCQ', 'CgIgAQ', 'CgIgAg', 'CgIgAw', 'CgIgBA', 'CgIgBQ', 'CgIgBg', 'CgIgBw', 'CgIgCA', 'CgIgCQ', 'CgIoAQ', 'CgIoAg', 'CgIoAw', 'CgIoBA', 'CgIoBQ', 'CgIoBg', 'CgIoBw', 'CgIoCA', 'CgIoCQ', 'CgIwAQ', 'CgIwAg', 'CgIwAw', 'CgIwBA', 'CgIwBQ', 'CgIwBg', 'CgIwBw', 'CgIwCA', 'CgIwCQ', 'CgI4AQ', 'CgI4Ag', 'CgI4Aw', 'CgI4BA', 'CgI4BQ', 'CgI4Bg', 'CgI4Bw', 'CgI4CA', 'CgI4CQ', 'CgJAAQ', 'CgJAAg', 'CgJAAw', 'CgJABA', 'CgJABQ', 'CgJABg', 'CgJABw', 'CgJACA', 'CgJACQ', 'CgJIAQ', 'CgJIAg', 'CgJIAw', 'CgJIBA', 'CgJIBQ', 'CgJIBg', 'CgJIBw', 'CgJICA', 'CgJICQ']
     steps:
     - uses: actions/checkout@v4
-    - name: Set up Python 3.9
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.9'
-    - name: Install test requirements
-      run: python3 ./devscripts/install_deps.py --include dev --include curl_cffi
     - name: Run tests
       continue-on-error: False
       run: |

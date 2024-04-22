@@ -1,5 +1,5 @@
 name: Core Tests
-on: push
+on: [[push]]
 permissions:
   contents: read
 

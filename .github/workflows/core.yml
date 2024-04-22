@@ -1,61 +1,28 @@
 name: Core Tests
 on:
-  push:
-    paths:
-      - .github/**
-      - devscripts/**
-      - test/**
-      - yt_dlp/**.py
-      - '!yt_dlp/extractor/*.py'
-      - yt_dlp/extractor/__init__.py
-      - yt_dlp/extractor/common.py
-      - yt_dlp/extractor/extractors.py
-  pull_request:
-    paths:
-      - .github/**
-      - devscripts/**
-      - test/**
-      - yt_dlp/**.py
-      - '!yt_dlp/extractor/*.py'
-      - yt_dlp/extractor/__init__.py
-      - yt_dlp/extractor/common.py
-      - yt_dlp/extractor/extractors.py
+  workflow_dispatch:
 permissions:
   contents: read
-
-concurrency:
-  group: core-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   tests:
     name: Core Tests
     if: "!contains(github.event.head_commit.message, 'ci skip')"
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest]
-        # CPython 3.8 is in quick-test
-        python-version: ['3.9', '3.10', '3.11', '3.12', pypy-3.8, pypy-3.10]
-        include:
-        # atleast one of each CPython/PyPy tests must be in windows
-        - os: windows-latest
-          python-version: '3.8'
-        - os: windows-latest
-          python-version: '3.12'
-        - os: windows-latest
-          python-version: pypy-3.9
+        protobuf: ['CgIIAQ', 'CgIIAg', 'CgIIAw', 'CgIIBA', 'CgIIBQ', 'CgIIBg', 'CgIIBw', 'CgIICA', 'CgIICQ', 'CgIQAQ', 'CgIQAg', 'CgIQAw', 'CgIQBA', 'CgIQBQ', 'CgIQBg', 'CgIQBw', 'CgIQCA', 'CgIQCQ', 'CgIYAQ', 'CgIYAg', 'CgIYAw', 'CgIYBA', 'CgIYBQ', 'CgIYBg', 'CgIYBw', 'CgIYCA', 'CgIYCQ', 'CgIgAQ', 'CgIgAg', 'CgIgAw', 'CgIgBA', 'CgIgBQ', 'CgIgBg', 'CgIgBw', 'CgIgCA', 'CgIgCQ', 'CgIoAQ', 'CgIoAg', 'CgIoAw', 'CgIoBA', 'CgIoBQ', 'CgIoBg', 'CgIoBw', 'CgIoCA', 'CgIoCQ', 'CgIwAQ', 'CgIwAg', 'CgIwAw', 'CgIwBA', 'CgIwBQ', 'CgIwBg', 'CgIwBw', 'CgIwCA', 'CgIwCQ', 'CgI4AQ', 'CgI4Ag', 'CgI4Aw', 'CgI4BA', 'CgI4BQ', 'CgI4Bg', 'CgI4Bw', 'CgI4CA', 'CgI4CQ', 'CgJAAQ', 'CgJAAg', 'CgJAAw', 'CgJABA', 'CgJABQ', 'CgJABg', 'CgJABw', 'CgJACA', 'CgJACQ', 'CgJIAQ', 'CgJIAg', 'CgJIAw', 'CgJIBA', 'CgJIBQ', 'CgJIBg', 'CgJIBw', 'CgJICA', 'CgJICQ', 'EgIIAQ', 'EgIIAg', 'EgIIAw', 'EgIIBA', 'EgIIBQ', 'EgIIBg', 'EgIIBw', 'EgIICA', 'EgIICQ', 'EgIQAQ', 'EgIQAg', 'EgIQAw', 'EgIQBA', 'EgIQBQ', 'EgIQBg', 'EgIQBw', 'EgIQCA', 'EgIQCQ', 'EgIYAQ', 'EgIYAg', 'EgIYAw', 'EgIYBA', 'EgIYBQ', 'EgIYBg', 'EgIYBw', 'EgIYCA', 'EgIYCQ', 'EgIgAQ', 'EgIgAg', 'EgIgAw', 'EgIgBA', 'EgIgBQ', 'EgIgBg', 'EgIgBw', 'EgIgCA', 'EgIgCQ', 'EgIoAQ', 'EgIoAg', 'EgIoAw', 'EgIoBA', 'EgIoBQ', 'EgIoBg', 'EgIoBw', 'EgIoCA', 'EgIoCQ', 'EgIwAQ', 'EgIwAg', 'EgIwAw', 'EgIwBA', 'EgIwBQ', 'EgIwBg', 'EgIwBw', 'EgIwCA', 'EgIwCQ', 'EgI4AQ', 'EgI4Ag', 'EgI4Aw', 'EgI4BA', 'EgI4BQ', 'EgI4Bg', 'EgI4Bw', 'EgI4CA', 'EgI4CQ', 'EgJAAQ', 'EgJAAg', 'EgJAAw', 'EgJABA', 'EgJABQ', 'EgJABg', 'EgJABw', 'EgJACA', 'EgJACQ', 'EgJIAQ', 'EgJIAg', 'EgJIAw', 'EgJIBA', 'EgJIBQ', 'EgJIBg', 'EgJIBw', 'EgJICA', 'EgJICQ', 'GgIIAQ', 'GgIIAg', 'GgIIAw', 'GgIIBA', 'GgIIBQ', 'GgIIBg', 'GgIIBw', 'GgIICA', 'GgIICQ', 'GgIQAQ', 'GgIQAg', 'GgIQAw', 'GgIQBA', 'GgIQBQ', 'GgIQBg', 'GgIQBw', 'GgIQCA', 'GgIQCQ', 'GgIYAQ', 'GgIYAg', 'GgIYAw', 'GgIYBA', 'GgIYBQ', 'GgIYBg', 'GgIYBw', 'GgIYCA', 'GgIYCQ', 'GgIgAQ', 'GgIgAg', 'GgIgAw', 'GgIgBA', 'GgIgBQ', 'GgIgBg', 'GgIgBw', 'GgIgCA', 'GgIgCQ', 'GgIoAQ', 'GgIoAg', 'GgIoAw', 'GgIoBA', 'GgIoBQ', 'GgIoBg', 'GgIoBw', 'GgIoCA', 'GgIoCQ', 'GgIwAQ', 'GgIwAg', 'GgIwAw', 'GgIwBA', 'GgIwBQ', 'GgIwBg', 'GgIwBw', 'GgIwCA', 'GgIwCQ', 'GgI4AQ', 'GgI4Ag', 'GgI4Aw', 'GgI4BA', 'GgI4BQ', 'GgI4Bg', 'GgI4Bw', 'GgI4CA', 'GgI4CQ', 'GgJAAQ', 'GgJAAg', 'GgJAAw', 'GgJABA', 'GgJABQ', 'GgJABg', 'GgJABw', 'GgJACA', 'GgJACQ', 'GgJIAQ', 'GgJIAg', 'GgJIAw', 'GgJIBA', 'GgJIBQ', 'GgJIBg', 'GgJIBw', 'GgJICA', 'GgJICQ', 'IgIIAQ', 'IgIIAg', 'IgIIAw', 'IgIIBA', 'IgIIBQ', 'IgIIBg', 'IgIIBw', 'IgIICA', 'IgIICQ', 'IgIQAQ', 'IgIQAg', 'IgIQAw', 'IgIQBA', 'IgIQBQ', 'IgIQBg', 'IgIQBw', 'IgIQCA', 'IgIQCQ', 'IgIYAQ', 'IgIYAg', 'IgIYAw', 'IgIYBA', 'IgIYBQ', 'IgIYBg', 'IgIYBw', 'IgIYCA', 'IgIYCQ', 'IgIgAQ', 'IgIgAg', 'IgIgAw', 'IgIgBA', 'IgIgBQ', 'IgIgBg', 'IgIgBw', 'IgIgCA', 'IgIgCQ', 'IgIoAQ', 'IgIoAg', 'IgIoAw', 'IgIoBA', 'IgIoBQ', 'IgIoBg', 'IgIoBw', 'IgIoCA', 'IgIoCQ', 'IgIwAQ', 'IgIwAg', 'IgIwAw', 'IgIwBA', 'IgIwBQ', 'IgIwBg', 'IgIwBw', 'IgIwCA', 'IgIwCQ', 'IgI4AQ', 'IgI4Ag', 'IgI4Aw', 'IgI4BA', 'IgI4BQ', 'IgI4Bg', 'IgI4Bw', 'IgI4CA', 'IgI4CQ', 'IgJAAQ', 'IgJAAg', 'IgJAAw', 'IgJABA', 'IgJABQ', 'IgJABg', 'IgJABw', 'IgJACA', 'IgJACQ', 'IgJIAQ', 'IgJIAg', 'IgJIAw', 'IgJIBA', 'IgJIBQ', 'IgJIBg', 'IgJIBw', 'IgJICA', 'IgJICQ', 'KgIIAQ', 'KgIIAg', 'KgIIAw', 'KgIIBA', 'KgIIBQ', 'KgIIBg', 'KgIIBw', 'KgIICA', 'KgIICQ', 'KgIQAQ', 'KgIQAg', 'KgIQAw', 'KgIQBA', 'KgIQBQ', 'KgIQBg', 'KgIQBw', 'KgIQCA', 'KgIQCQ', 'KgIYAQ', 'KgIYAg', 'KgIYAw', 'KgIYBA', 'KgIYBQ', 'KgIYBg', 'KgIYBw', 'KgIYCA', 'KgIYCQ', 'KgIgAQ', 'KgIgAg', 'KgIgAw', 'KgIgBA', 'KgIgBQ', 'KgIgBg', 'KgIgBw', 'KgIgCA', 'KgIgCQ', 'KgIoAQ', 'KgIoAg', 'KgIoAw', 'KgIoBA', 'KgIoBQ', 'KgIoBg', 'KgIoBw', 'KgIoCA', 'KgIoCQ', 'KgIwAQ', 'KgIwAg', 'KgIwAw', 'KgIwBA', 'KgIwBQ', 'KgIwBg', 'KgIwBw', 'KgIwCA', 'KgIwCQ', 'KgI4AQ', 'KgI4Ag', 'KgI4Aw', 'KgI4BA', 'KgI4BQ', 'KgI4Bg', 'KgI4Bw', 'KgI4CA', 'KgI4CQ', 'KgJAAQ', 'KgJAAg', 'KgJAAw', 'KgJABA', 'KgJABQ', 'KgJABg', 'KgJABw', 'KgJACA', 'KgJACQ', 'KgJIAQ', 'KgJIAg', 'KgJIAw', 'KgJIBA', 'KgJIBQ', 'KgJIBg', 'KgJIBw', 'KgJICA', 'KgJICQ', 'MgIIAQ', 'MgIIAg', 'MgIIAw', 'MgIIBA', 'MgIIBQ', 'MgIIBg', 'MgIIBw', 'MgIICA', 'MgIICQ', 'MgIQAQ', 'MgIQAg', 'MgIQAw', 'MgIQBA', 'MgIQBQ', 'MgIQBg', 'MgIQBw', 'MgIQCA', 'MgIQCQ', 'MgIYAQ', 'MgIYAg', 'MgIYAw', 'MgIYBA', 'MgIYBQ', 'MgIYBg', 'MgIYBw', 'MgIYCA', 'MgIYCQ', 'MgIgAQ', 'MgIgAg', 'MgIgAw', 'MgIgBA', 'MgIgBQ', 'MgIgBg', 'MgIgBw', 'MgIgCA', 'MgIgCQ', 'MgIoAQ', 'MgIoAg', 'MgIoAw', 'MgIoBA', 'MgIoBQ', 'MgIoBg', 'MgIoBw', 'MgIoCA', 'MgIoCQ', 'MgIwAQ', 'MgIwAg', 'MgIwAw', 'MgIwBA', 'MgIwBQ', 'MgIwBg', 'MgIwBw', 'MgIwCA', 'MgIwCQ', 'MgI4AQ', 'MgI4Ag', 'MgI4Aw', 'MgI4BA', 'MgI4BQ', 'MgI4Bg', 'MgI4Bw', 'MgI4CA', 'MgI4CQ', 'MgJAAQ', 'MgJAAg', 'MgJAAw', 'MgJABA', 'MgJABQ', 'MgJABg', 'MgJABw', 'MgJACA', 'MgJACQ', 'MgJIAQ', 'MgJIAg', 'MgJIAw', 'MgJIBA', 'MgJIBQ', 'MgJIBg', 'MgJIBw', 'MgJICA', 'MgJICQ', 'OgIIAQ', 'OgIIAg', 'OgIIAw', 'OgIIBA', 'OgIIBQ', 'OgIIBg', 'OgIIBw', 'OgIICA', 'OgIICQ', 'OgIQAQ', 'OgIQAg', 'OgIQAw', 'OgIQBA', 'OgIQBQ', 'OgIQBg', 'OgIQBw', 'OgIQCA', 'OgIQCQ', 'OgIYAQ', 'OgIYAg', 'OgIYAw', 'OgIYBA', 'OgIYBQ', 'OgIYBg', 'OgIYBw', 'OgIYCA', 'OgIYCQ', 'OgIgAQ', 'OgIgAg', 'OgIgAw', 'OgIgBA', 'OgIgBQ', 'OgIgBg', 'OgIgBw', 'OgIgCA', 'OgIgCQ', 'OgIoAQ', 'OgIoAg', 'OgIoAw', 'OgIoBA', 'OgIoBQ', 'OgIoBg', 'OgIoBw', 'OgIoCA', 'OgIoCQ', 'OgIwAQ', 'OgIwAg', 'OgIwAw', 'OgIwBA', 'OgIwBQ', 'OgIwBg', 'OgIwBw', 'OgIwCA', 'OgIwCQ', 'OgI4AQ', 'OgI4Ag', 'OgI4Aw', 'OgI4BA', 'OgI4BQ', 'OgI4Bg', 'OgI4Bw', 'OgI4CA', 'OgI4CQ', 'OgJAAQ', 'OgJAAg', 'OgJAAw', 'OgJABA', 'OgJABQ', 'OgJABg', 'OgJABw', 'OgJACA', 'OgJACQ', 'OgJIAQ', 'OgJIAg', 'OgJIAw', 'OgJIBA', 'OgJIBQ', 'OgJIBg', 'OgJIBw', 'OgJICA', 'OgJICQ', 'QgIIAQ', 'QgIIAg', 'QgIIAw', 'QgIIBA', 'QgIIBQ', 'QgIIBg', 'QgIIBw', 'QgIICA', 'QgIICQ', 'QgIQAQ', 'QgIQAg', 'QgIQAw', 'QgIQBA', 'QgIQBQ', 'QgIQBg', 'QgIQBw', 'QgIQCA', 'QgIQCQ', 'QgIYAQ', 'QgIYAg', 'QgIYAw', 'QgIYBA', 'QgIYBQ', 'QgIYBg', 'QgIYBw', 'QgIYCA', 'QgIYCQ', 'QgIgAQ', 'QgIgAg', 'QgIgAw', 'QgIgBA', 'QgIgBQ', 'QgIgBg', 'QgIgBw', 'QgIgCA', 'QgIgCQ', 'QgIoAQ', 'QgIoAg', 'QgIoAw', 'QgIoBA', 'QgIoBQ', 'QgIoBg', 'QgIoBw', 'QgIoCA', 'QgIoCQ', 'QgIwAQ', 'QgIwAg', 'QgIwAw', 'QgIwBA', 'QgIwBQ', 'QgIwBg', 'QgIwBw', 'QgIwCA', 'QgIwCQ', 'QgI4AQ', 'QgI4Ag', 'QgI4Aw', 'QgI4BA', 'QgI4BQ', 'QgI4Bg', 'QgI4Bw', 'QgI4CA', 'QgI4CQ', 'QgJAAQ', 'QgJAAg', 'QgJAAw', 'QgJABA', 'QgJABQ', 'QgJABg', 'QgJABw', 'QgJACA', 'QgJACQ', 'QgJIAQ', 'QgJIAg', 'QgJIAw', 'QgJIBA', 'QgJIBQ', 'QgJIBg', 'QgJIBw', 'QgJICA', 'QgJICQ', 'SgIIAQ', 'SgIIAg', 'SgIIAw', 'SgIIBA', 'SgIIBQ', 'SgIIBg', 'SgIIBw', 'SgIICA', 'SgIICQ', 'SgIQAQ', 'SgIQAg', 'SgIQAw', 'SgIQBA', 'SgIQBQ', 'SgIQBg', 'SgIQBw', 'SgIQCA', 'SgIQCQ', 'SgIYAQ', 'SgIYAg', 'SgIYAw', 'SgIYBA', 'SgIYBQ', 'SgIYBg', 'SgIYBw', 'SgIYCA', 'SgIYCQ', 'SgIgAQ', 'SgIgAg', 'SgIgAw', 'SgIgBA', 'SgIgBQ', 'SgIgBg', 'SgIgBw', 'SgIgCA', 'SgIgCQ', 'SgIoAQ', 'SgIoAg', 'SgIoAw', 'SgIoBA', 'SgIoBQ', 'SgIoBg', 'SgIoBw', 'SgIoCA', 'SgIoCQ', 'SgIwAQ', 'SgIwAg', 'SgIwAw', 'SgIwBA', 'SgIwBQ', 'SgIwBg', 'SgIwBw', 'SgIwCA', 'SgIwCQ', 'SgI4AQ', 'SgI4Ag', 'SgI4Aw', 'SgI4BA', 'SgI4BQ', 'SgI4Bg', 'SgI4Bw', 'SgI4CA', 'SgI4CQ', 'SgJAAQ', 'SgJAAg', 'SgJAAw', 'SgJABA', 'SgJABQ', 'SgJABg', 'SgJABw', 'SgJACA', 'SgJACQ', 'SgJIAQ', 'SgJIAg', 'SgJIAw', 'SgJIBA', 'SgJIBQ', 'SgJIBg', 'SgJIBw', 'SgJICA', 'SgJICQ']
     steps:
     - uses: actions/checkout@v4
-    - name: Set up Python ${{ matrix.python-version }}
+    - name: Set up Python 3.9
       uses: actions/setup-python@v5
       with:
-        python-version: ${{ matrix.python-version }}
+        python-version: '3.9'
     - name: Install test requirements
       run: python3 ./devscripts/install_deps.py --include dev --include curl_cffi
     - name: Run tests
       continue-on-error: False
       run: |
-        python3 -m yt_dlp -v || true  # Print debug head
-        python3 ./devscripts/run_tests.py core
+        sed -i 's/CgIIAQ/${{ matrix.protobuf }}/g' yt_dlp/extractor/youtube.py
+        python3 -m yt_dlp -Werror --simulate WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro --extractor-args "youtube:player_client=android" 

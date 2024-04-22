@@ -23,7 +23,6 @@ jobs:
     - name: Run tests
       continue-on-error: False
       run: |
-        dir
-        cat yt_dlp/extractor/youtube.py
         sed -i 's/CgIIAQ/${{ matrix.protobuf }}/g' yt_dlp/extractor/youtube.py
+        git diff
         python3 -Werror -m yt_dlp --simulate WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro WNCl-69POro --extractor-args "youtube:player_client=android" --abort-on-error

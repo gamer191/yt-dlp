@@ -1,6 +1,6 @@
 name: Core Tests
 on:
-  workflow_dispatch:
+  push:
 permissions:
   contents: read
 

@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         protobuf: ['IICA', 'IICQ', 'IoCA', 'IwAg', 'IYAQ', 'IYCA', 'IoAw', 'IoBg', 'IwBQ', 'I4BA', 'JAAw', 'JABA', 'JIAg', 'JIBA', 'JIBQ', 'JIBg', 'JIBw', 'JICA', 'JICQ']
-        attempt: [1,2,3,4,5,6,7,8,9,'10',11,12,13,14]
+        attempt: [1,2,3,4,5,6,7,8,9,'10',11,12,13]
     steps:
     - uses: actions/checkout@v4
     - name: Run tests

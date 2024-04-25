@@ -11,8 +11,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        protobuf: ['IIAQ', 'IIAg', 'IIAw', 'IIBA', 'IIBQ', 'IIBg', 'IIBw', 'IICA', 'IICQ', 'IQAQ', 'IQAg', 'IQAw', 'IQBA', 'IQBQ', 'IQBg', 'IQBw', 'IQCA', 'IQCQ', 'IYAQ', 'IYAg', 'IYAw', 'IYBA', 'IYBQ', 'IYBg', 'IYBw', 'IYCA', 'IYCQ', 'IgAQ', 'IgAg', 'IgAw', 'IgBA', 'IgBQ', 'IgBg', 'IgBw', 'IgCA', 'IgCQ', 'IoAQ', 'IoAg', 'IoAw', 'IoBA', 'IoBQ', 'IoBg', 'IoBw', 'IoCA', 'IoCQ', 'IwAQ', 'IwAg', 'IwAw', 'IwBA', 'IwBQ', 'IwBg', 'IwBw', 'IwCA', 'IwCQ', 'I4AQ', 'I4Ag', 'I4Aw', 'I4BA', 'I4BQ', 'I4Bg', 'I4Bw', 'I4CA', 'I4CQ', 'JAAQ', 'JAAg', 'JAAw', 'JABA', 'JABQ', 'JABg', 'JABw', 'JACA', 'JACQ', 'JIAQ', 'JIAg', 'JIAw', 'JIBA', 'JIBQ', 'JIBg', 'JIBw', 'JICA', 'JICQ']
-        attempt: [1,2,3]
+        protobuf: ['IICA', 'IICQ', 'IoCA', 'IwAg', 'IYAQ', 'IYCA', 'IoAw', 'IoBg', 'IwBQ', 'I4BA', 'JAAw', 'JABA', 'JIAg', 'JIBA', 'JIBQ', 'JIBg', 'JIBw', 'JICA', 'JICQ']
+        attempt: [1,2,3,4,5,6,7,8,9,'10',11,12,13,14]
     steps:
     - uses: actions/checkout@v4
     - name: Run tests

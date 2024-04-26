@@ -17,8 +17,8 @@ jobs:
     - uses: actions/checkout@v4
     - name: Run tests
       continue-on-error: False
-      run: echo $(echo hi) <(echo hi) #|
-   #     pip install git+https://github.com/Grub4K/qpb.git
-  #      sed -i 's/CgIIAQ/$(qpb enc {1:{1:1}}|grep -oP "(?<=b64:\s)\w+")/g' yt_dlp/extractor/youtube.py
-    #    git diff
-     #   python3 -Werror -m yt_dlp --simulate --extractor-args "youtube:player_client=android" --abort-on-error WNCl-69POro
+      run: |
+        pip install git+https://github.com/Grub4K/qpb.git
+        sed -i 's/CgIIAQ/$(echo hi)/g' yt_dlp/extractor/youtube.py
+        git diff
+        python3 -Werror -m yt_dlp --simulate --extractor-args "youtube:player_client=android" --abort-on-error WNCl-69POro

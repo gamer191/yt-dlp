@@ -10,15 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      #matrix:
-        #N: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14]
-        #O: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14]
+      matrix:
+        n: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14]
+        o: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14]
     steps:
     - uses: actions/checkout@v4
     - name: Run tests
       continue-on-error: False
       run: |
         pip install git+https://github.com/Grub4K/qpb.git
-        sed -i "s/CgIIAQ/$(qpb enc {1:{1:1}}|grep -oP "(?<=b64:\s)\w+")/g" yt_dlp/extractor/youtube.py
+        sed -i "s/CgIIAQ/$(qpb enc {1:{${{ matrix.n }}:${{ matrix.o }}}}|grep -oP "(?<=b64:\s)\w+")/g" yt_dlp/extractor/youtube.py
         git diff
         python3 -Werror -m yt_dlp --simulate --extractor-args "youtube:player_client=android" --abort-on-error WNCl-69POro

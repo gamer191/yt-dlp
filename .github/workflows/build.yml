@@ -127,9 +127,9 @@ jobs:
           python=3.10.*
           pyinstaller
           brotli-python
-          libstdcxx-ng=h7e041cc_5
-          libgomp=h807b86a_5
-          libgcc-ng=h807b86a_5
+          libstdcxx-ng=13.2.0=h7e041cc_5
+          libgomp=13.2.0=h807b86a_5
+          libgcc-ng=13.2.0=h807b86a_5
           EOF
           python devscripts/install_deps.py --print \
             --exclude brotli --exclude brotlicffi \

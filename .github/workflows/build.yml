@@ -39,6 +39,7 @@ jobs:
           python devscripts/update_changelog.py -vv
           python devscripts/make_lazy_extractors.py
       - name: Build Unix standalone binary
+        shell: bash -l {0}
         run: |
           unset LD_LIBRARY_PATH  # Harmful; set by setup-python
           conda activate build

@@ -161,6 +161,17 @@ jobs:
             cp ./${binary} ./${binary}_downgraded
             version="$(./${binary} --version)"
             ./${binary}_downgraded -v --update-to yt-dlp/yt-dlp@2024.04.09
+            ./${binary}_downgraded -v --update-to yt-dlp/yt-dlp@2024.03.10
+            ./${binary}_downgraded -v --update-to yt-dlp/yt-dlp@2023.12.30
+            ./${binary}_downgraded -v --update-to yt-dlp/yt-dlp@2023.11.16
+            ./${binary}_downgraded -v --update-to yt-dlp/yt-dlp@2023.11.14
+            ./${binary}_downgraded -v --update-to yt-dlp/yt-dlp@2023.10.13
+            ./${binary}_downgraded -v --update-to yt-dlp/yt-dlp@2023.10.07
+            ./${binary}_downgraded -v --update-to yt-dlp/yt-dlp@2023.09.24
+            ./${binary}_downgraded -v --update-to yt-dlp/yt-dlp@2023.07.06
+            ./${binary}_downgraded -v --update-to yt-dlp/yt-dlp@2023.06.22
+            ./${binary}_downgraded -v --update-to yt-dlp/yt-dlp@2023.06.21
+            ./${binary}_downgraded -v --update-to yt-dlp/yt-dlp@2023.03.04
             downgraded_version="$(./${binary}_downgraded --version)"
             [[ "$version" != "$downgraded_version" ]]
           done

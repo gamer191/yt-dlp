@@ -48,5 +48,7 @@ jobs:
 
       - name: Verify --update-to
         run: |
+         cd ./yt-dlp_linux
+         dir
          chmod +x ./yt-dlp_linux
          ./yt-dlp_linux --version

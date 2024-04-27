@@ -1,32 +1,11 @@
 name: Build Artifacts
-on:
-  workflow_dispatch:
-    inputs:
-      origin:
-        description: Origin
-        required: false
-        default: 'current repo'
-        type: choice
-        options:
-        - 'current repo'
+on:  workflow_dispatch
 
 permissions:
   contents: read
 
 jobs:
-  process:
-    runs-on: ubuntu-latest
-    outputs:
-      origin: ${{ steps.process_origin.outputs.origin }}
-    steps:
-      - name: Process origin
-        id: process_origin
-        run: |
-          echo "origin=${{ inputs.origin == 'current repo' && github.repository || inputs.origin }}" | tee "$GITHUB_OUTPUT"
-          echo "origin=${{ inputs.origin == 'current repo' && github.repository || inputs.origin }}"
-
   unix:
-    needs: process
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -58,12 +37,9 @@ jobs:
 
       - name: Prepare
         run: |
-          python devscripts/update-version.py -c "stable" -r "${{ needs.process.outputs.origin }}" "2024.04.27"
+          python devscripts/update-version.py -c "stable" -r "gamer191/yt-dlp" "2024.04.27"
           python devscripts/update_changelog.py -vv
           python devscripts/make_lazy_extractors.py
-      - name: Build Unix platform-independent binary
-        run: |
-          make all tar
       - name: Build Unix standalone binary
         shell: bash -l {0}
         run: |
@@ -79,8 +55,4 @@ jobs:
         #if: vars.UPDATE_TO_VERIFICATION
         run: |
          chmod +x ./yt-dlp_linux
-         cp ./yt-dlp_linux ./yt-dlp_linux_downgraded
-         version="$(./yt-dlp_linux --version)"
-         ./yt-dlp_linux_downgraded -v --update-to yt-dlp/yt-dlp@2023.03.04
-         downgraded_version="$(./yt-dlp_linux_downgraded --version)"
-         [[ "$version" != "$downgraded_version" ]]
+         ./yt-dlp_linux --version

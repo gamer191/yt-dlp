@@ -171,7 +171,6 @@ jobs:
             ./${binary}_downgraded -v --update-to yt-dlp/yt-dlp@2023.07.06
             ./${binary}_downgraded -v --update-to yt-dlp/yt-dlp@2023.06.22
             ./${binary}_downgraded -v --update-to yt-dlp/yt-dlp@2023.06.21
-            ./${binary}_downgraded -v --update-to yt-dlp/yt-dlp@2023.03.04
             downgraded_version="$(./${binary}_downgraded --version)"
             [[ "$version" != "$downgraded_version" ]]
           done

@@ -129,8 +129,7 @@ jobs:
           brotli-python
           EOF
           python devscripts/install_deps.py --print \
-            --exclude brotli --exclude brotlicffi \
-            --include secretstorage >> ./requirements.txt
+            --exclude brotli --exclude brotlicffi >> ./requirements.txt
           mamba create -n build --file ./requirements.txt
 
       - name: Prepare

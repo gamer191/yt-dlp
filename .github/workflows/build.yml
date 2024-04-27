@@ -154,7 +154,14 @@ jobs:
           python -m bundle.pyinstaller
           mv ./dist/yt-dlp_linux ./yt-dlp_linux
           mv ./dist/yt-dlp_linux.zip ./yt-dlp_linux.zip
-
+      
+      - name: verify update-to with pip
+        run: |
+          python -c "import ssl"
+          echo success
+          pip install yt-dlp
+          yt-dlp --verbose
+        
       - name: Verify --update-to
         #if: vars.UPDATE_TO_VERIFICATION
         run: |

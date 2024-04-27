@@ -127,6 +127,9 @@ jobs:
           python=3.10.*
           pyinstaller
           brotli-python
+          libstdcxx-ng=h7e041cc_5
+          libgomp=h807b86a_5
+          libgcc-ng=h807b86a_5
           EOF
           python devscripts/install_deps.py --print \
             --exclude brotli --exclude brotlicffi \
@@ -153,7 +156,7 @@ jobs:
           mv ./dist/yt-dlp_linux.zip ./yt-dlp_linux.zip
 
       - name: Verify --update-to
-        if: vars.UPDATE_TO_VERIFICATION
+ #       if: vars.UPDATE_TO_VERIFICATION
         run: |
           binaries=("yt-dlp" "yt-dlp_linux")
           for binary in "${binaries[@]}"; do

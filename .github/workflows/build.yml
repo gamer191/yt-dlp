@@ -1,17 +1,11 @@
 name: Build Artifacts
 on:  workflow_dispatch
 
-permissions:
-  contents: read
-
 jobs:
   unix:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.10"
       - uses: conda-incubator/setup-miniconda@v3
         with:
           miniforge-variant: Mambaforge
@@ -22,7 +16,7 @@ jobs:
           auto-activate-base: false
       - name: Install Requirements
         run: |
-          sudo apt -y install zip pandoc man sed
+          sudo apt -y install pandoc
           cat > ./requirements.txt << EOF
           python=3.10.*
           pyinstaller
@@ -31,13 +25,14 @@ jobs:
           python devscripts/install_deps.py --print \
             --exclude brotli --exclude brotlicffi \
             --include secretstorage >> ./requirements.txt
+          cat requirements.txt
           mamba create -n build --file ./requirements.txt
 
       - name: Prepare
         run: |
           python devscripts/make_lazy_extractors.py
       - name: Build Unix standalone binary
-        shell: bash -l {0}
+        shell: bash --login {0}
         run: |
           unset LD_LIBRARY_PATH  # Harmful; set by setup-python
           conda activate build

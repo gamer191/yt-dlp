@@ -39,20 +39,13 @@ jobs:
           python devscripts/update_changelog.py -vv
           python devscripts/make_lazy_extractors.py
       - name: Build Unix standalone binary
-        shell: bash -l {0}
         run: |
           unset LD_LIBRARY_PATH  # Harmful; set by setup-python
           conda activate build
           python -m bundle.pyinstaller --onedir
-          (cd ./dist/yt-dlp_linux && zip -r ../yt-dlp_linux.zip .)
-          python -m bundle.pyinstaller
           mv ./dist/yt-dlp_linux ./yt-dlp_linux
-          mv ./dist/yt-dlp_linux.zip ./yt-dlp_linux.zip
 
       - name: Verify --update-to
-        #if: vars.UPDATE_TO_VERIFICATION
         run: |
          chmod +x ./yt-dlp_linux
-         curl --version
-         curl https://example.com/
          ./yt-dlp_linux --version

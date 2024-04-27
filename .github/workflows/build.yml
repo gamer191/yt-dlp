@@ -2,21 +2,6 @@ name: Build Artifacts
 on:
   workflow_dispatch:
     inputs:
-      version:
-        description: |
-          VERSION: yyyy.mm.dd[.rev] or rev
-        required: true
-        type: string
-      channel:
-        description: |
-          SOURCE of this build's updates: stable/nightly/master/<repo>
-        required: true
-        default: stable
-        type: string
-      unix:
-        description: yt-dlp, yt-dlp.tar.gz, yt-dlp_linux, yt-dlp_linux.zip
-        default: true
-        type: boolean
       origin:
         description: Origin
         required: false
@@ -38,10 +23,10 @@ jobs:
         id: process_origin
         run: |
           echo "origin=${{ inputs.origin == 'current repo' && github.repository || inputs.origin }}" | tee "$GITHUB_OUTPUT"
+          echo "origin=${{ inputs.origin == 'current repo' && github.repository || inputs.origin }}"
 
   unix:
     needs: process
-    if: inputs.unix
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -73,7 +58,7 @@ jobs:
 
       - name: Prepare
         run: |
-          python devscripts/update-version.py -c "${{ inputs.channel }}" -r "${{ needs.process.outputs.origin }}" "${{ inputs.version }}"
+          python devscripts/update-version.py -c "stable" -r "${{ needs.process.outputs.origin }}" "2024.04.27"
           python devscripts/update_changelog.py -vv
           python devscripts/make_lazy_extractors.py
       - name: Build Unix platform-independent binary

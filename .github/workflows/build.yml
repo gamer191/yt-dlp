@@ -17,7 +17,7 @@ jobs:
       - name: Install Requirements
         run: |
           sudo apt -y install pandoc
-          mamba create -n build python=3.10.* pyinstaller brotli-python certifi mutagen pycryptodomex
+          mamba create -n build python=3.10.* pyinstaller brotli-python certifi mutagen pycryptodomex "requests>=2.31.0,<3" "urllib3>=1.26.17,<3" "websockets>=12.0" cffi
       - name: Build Unix standalone binary
         shell: bash --login {0}
         run: |

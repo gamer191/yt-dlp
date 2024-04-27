@@ -1,5 +1,5 @@
 name: Build Artifacts
-on: #jmnhbgvfcd
+on:
   workflow_call:
     inputs:
       version:

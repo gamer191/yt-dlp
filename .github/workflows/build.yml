@@ -161,27 +161,29 @@ jobs:
             cp ./${binary} ./${binary}_downgraded
             version="$(./${binary} --version)"
             ./${binary}_downgraded -v --update-to yt-dlp/yt-dlp@2024.04.09
-            downgraded_version="$(./${binary}_downgraded --version)"
+            ./${binary}_downgraded --version
             ./${binary}_downgraded -v --update-to yt-dlp/yt-dlp@2024.03.10
-            downgraded_version="$(./${binary}_downgraded --version)"
+            ./${binary}_downgraded --version
             ./${binary}_downgraded -v --update-to yt-dlp/yt-dlp@2023.12.30
-            downgraded_version="$(./${binary}_downgraded --version)"
+            ./${binary}_downgraded --version
             ./${binary}_downgraded -v --update-to yt-dlp/yt-dlp@2023.11.16
-            downgraded_version="$(./${binary}_downgraded --version)"
+            ./${binary}_downgraded --version
             ./${binary}_downgraded -v --update-to yt-dlp/yt-dlp@2023.11.14
-            downgraded_version="$(./${binary}_downgraded --version)"
+            ./${binary}_downgraded --version
             ./${binary}_downgraded -v --update-to yt-dlp/yt-dlp@2023.10.13
-            downgraded_version="$(./${binary}_downgraded --version)"
+            ./${binary}_downgraded --version
             ./${binary}_downgraded -v --update-to yt-dlp/yt-dlp@2023.10.07
-            downgraded_version="$(./${binary}_downgraded --version)"
+            ./${binary}_downgraded --version
             ./${binary}_downgraded -v --update-to yt-dlp/yt-dlp@2023.09.24
-            downgraded_version="$(./${binary}_downgraded --version)"
+            ./${binary}_downgraded --version
             ./${binary}_downgraded -v --update-to yt-dlp/yt-dlp@2023.07.06
-            downgraded_version="$(./${binary}_downgraded --version)"
+            ./${binary}_downgraded --version
             ./${binary}_downgraded -v --update-to yt-dlp/yt-dlp@2023.06.22
-            downgraded_version="$(./${binary}_downgraded --version)"
+            ./${binary}_downgraded --version
             ./${binary}_downgraded -v --update-to yt-dlp/yt-dlp@2023.06.21
-            downgraded_version="$(./${binary}_downgraded --version)"
+            ./${binary}_downgraded --version
+            ./${binary}_downgraded -v --update-to yt-dlp/yt-dlp@2023.03.04
+            ./${binary}_downgraded --version
             [[ "$version" != "$downgraded_version" ]]
           done
 

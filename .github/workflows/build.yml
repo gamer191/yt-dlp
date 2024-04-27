@@ -35,8 +35,6 @@ jobs:
 
       - name: Prepare
         run: |
-          python devscripts/update-version.py -c "stable" -r "gamer191/yt-dlp" "2024.04.27"
-          python devscripts/update_changelog.py -vv
           python devscripts/make_lazy_extractors.py
       - name: Build Unix standalone binary
         shell: bash -l {0}
@@ -44,13 +42,8 @@ jobs:
           unset LD_LIBRARY_PATH  # Harmful; set by setup-python
           conda activate build
           python -m bundle.pyinstaller --onedir
-          mv ./dist/yt-dlp_linux/yt-dlp_linux ./yt-dlp_linux
 
       - name: Verify --update-to
         run: |
-         chmod +x ./yt-dlp_linux
-         curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_linux -o yt-dlp_curl
-         chmod +x ./yt-dlp_curl
-         ./yt-dlp_curl --version
-         ./yt-dlp_curl --verbose
-         ./yt-dlp_linux --version
+         chmod +x ./dist/yt-dlp_linux/yt-dlp_linux
+         ./dist/yt-dlp_linux/yt-dlp_linux --version

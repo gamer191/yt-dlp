@@ -155,15 +155,12 @@ jobs:
       - name: Verify --update-to
         #if: vars.UPDATE_TO_VERIFICATION
         run: |
-          binaries=("yt-dlp_linux")
-          for binary in "${binaries[@]}"; do
-            chmod +x ./${binary}
-            cp ./${binary} ./${binary}_downgraded
-            version="$(./${binary} --version)"
-            ./${binary}_downgraded -v --update-to yt-dlp/yt-dlp@2023.03.04
-            downgraded_version="$(./${binary}_downgraded --version)"
-            [[ "$version" != "$downgraded_version" ]]
-          done
+         chmod +x ./yt-dlp_linux
+         cp ./yt-dlp_linux ./yt-dlp_linux_downgraded
+         version="$(./yt-dlp_linux --version)"
+         ./yt-dlp_linux_downgraded -v --update-to yt-dlp/yt-dlp@2023.03.04
+         downgraded_version="$(./yt-dlp_linux_downgraded --version)"
+         [[ "$version" != "$downgraded_version" ]]
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4

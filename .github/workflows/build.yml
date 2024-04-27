@@ -129,7 +129,8 @@ jobs:
           brotli-python
           cffi
           pycparser
-          cryptography=41.0.7
+          cryptography
+          openssl=3.2.0
           EOF
           python devscripts/install_deps.py --print \
             --exclude brotli --exclude brotlicffi >> ./requirements.txt

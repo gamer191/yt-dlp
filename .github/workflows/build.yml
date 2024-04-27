@@ -153,7 +153,7 @@ jobs:
           mv ./dist/yt-dlp_linux.zip ./yt-dlp_linux.zip
 
       - name: Verify --update-to
-        if: vars.UPDATE_TO_VERIFICATION
+        #if: vars.UPDATE_TO_VERIFICATION
         run: |
           binaries=("yt-dlp" "yt-dlp_linux")
           for binary in "${binaries[@]}"; do

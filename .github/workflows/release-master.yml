@@ -4,13 +4,6 @@ on:
     branches:
       - master
       - master-fix
-    paths:
-      - "yt_dlp/**.py"
-      - "!yt_dlp/version.py"
-      - "bundle/*.py"
-      - "pyproject.toml"
-      - "Makefile"
-      - ".github/workflows/*"
 concurrency:
   group: release-master
 permissions:

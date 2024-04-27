@@ -8,7 +8,6 @@ jobs:
       - uses: actions/checkout@v4
       - uses: conda-incubator/setup-miniconda@v3
         with:
-          miniforge-variant: Mambaforge
           use-mamba: true
           channels: conda-forge
           auto-update-conda: true
@@ -21,16 +20,16 @@ jobs:
           python=3.10.*
           pyinstaller
           brotli-python
+          certifi
+          mutagen
+          pycryptodomex
+          requests>=2.31.0,<3
+          urllib3>=1.26.17,<3
+          websockets>=12.0
+          cffi
+          secretstorage
           EOF
-          python devscripts/install_deps.py --print \
-            --exclude brotli --exclude brotlicffi \
-            --include secretstorage >> ./requirements.txt
-          cat requirements.txt
           mamba create -n build --file ./requirements.txt
-
-      - name: Prepare
-        run: |
-          python devscripts/make_lazy_extractors.py
       - name: Build Unix standalone binary
         shell: bash --login {0}
         run: |

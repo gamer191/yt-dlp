@@ -3,13 +3,14 @@ on:
   push:
     branches:
       - master
+      - master-fix
     paths:
       - "yt_dlp/**.py"
       - "!yt_dlp/version.py"
       - "bundle/*.py"
       - "pyproject.toml"
       - "Makefile"
-      - ".github/workflows/build.yml"
+      - ".github/workflows/*"
 concurrency:
   group: release-master
 permissions:

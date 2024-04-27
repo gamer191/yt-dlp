@@ -319,8 +319,8 @@ jobs:
       - name: Install Requirements
         run: |
           brew install coreutils
-          python3 devscripts/install_deps.py --user -o --include build
-          python3 devscripts/install_deps.py --user --include pyinstaller
+    #      python3 devscripts/install_deps.py --user -o --include build
+     #     python3 devscripts/install_deps.py --user --include pyinstaller
 
       - name: Prepare
         run: |

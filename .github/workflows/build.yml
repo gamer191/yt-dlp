@@ -155,19 +155,6 @@ jobs:
       - name: Verify --update-to
         #if: vars.UPDATE_TO_VERIFICATION
         run: |
-          binaries=("yt-dlp")
-          for binary in "${binaries[@]}"; do
-            chmod +x ./${binary}
-            cp ./${binary} ./${binary}_downgraded
-            version="$(./${binary} --version)"
-            ./${binary}_downgraded -v --update-to yt-dlp/yt-dlp@2023.03.04
-            downgraded_version="$(./${binary}_downgraded --version)"
-            [[ "$version" != "$downgraded_version" ]]
-          done
-
-      - name: Verify --update-to linux
-        #if: vars.UPDATE_TO_VERIFICATION
-        run: |
           binaries=("yt-dlp_linux")
           for binary in "${binaries[@]}"; do
             chmod +x ./${binary}

@@ -10,7 +10,7 @@ jobs:
       matrix:
         run: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
         args: ["player_client=default", "player_client=ios", "player_client=default,player_skip=webpage", "player_client=ios,player_skip=webpage"]
-        command: [--no-simualte, --user-agent "com.google.ios.youtube/19.23.3 (iPhone11,6; U; CPU iOS 16_1_1 like Mac OS X; en_AU)"]
+        command: [--no-simulate, --user-agent "com.google.ios.youtube/19.23.3 (iPhone11,6; U; CPU iOS 16_1_1 like Mac OS X; en_AU)"]
         
     steps:
     - name: Install test requirements

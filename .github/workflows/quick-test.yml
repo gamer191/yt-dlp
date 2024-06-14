@@ -15,7 +15,7 @@ jobs:
         
     steps:
     - name: Install test requirements
-      run: pip install yt-dlp
+      run: pip install --pre yt-dlp
     - name: Run tests
       run: |
         echo  ${{ matrix.run }}

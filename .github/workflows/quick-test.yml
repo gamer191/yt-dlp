@@ -18,4 +18,4 @@ jobs:
     - name: Run tests
       run: |
         echo  ${{ matrix.run }}
-        yt-dlp --extractor-args "youtube:${{ matrix.args }}" ${{ matrix.command }} test:youtube test:youtube test:youtube test:youtube test:youtube test:youtube test:youtube test:youtube test:youtube test:youtube
+        yt-dlp --yes-overwrite --extractor-args "youtube:${{ matrix.args }}" ${{ matrix.command }} test:youtube test:youtube test:youtube test:youtube test:youtube test:youtube test:youtube test:youtube test:youtube test:youtube

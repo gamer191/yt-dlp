@@ -261,8 +261,6 @@ select = [
     "TID",    # Ruff-specific rules
     "TCH",    # Ruff-specific rules
     "INT",
-    "ARG",
-    "PTH",
     "TD",
     "FIX",
     "ERA",

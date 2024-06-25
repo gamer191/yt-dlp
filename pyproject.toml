@@ -229,7 +229,6 @@ select = [
     "B",      # flake8-bugbear
     "A",      # flake8-builtins
     "COM",    # flake8-commas
-    "BLE",    # flake8-blind-except
     "C4",     # flake8-comprehensions
     "FA",     # flake8-future-annotations
     "ISC",    # flake8-implicit-str-concat

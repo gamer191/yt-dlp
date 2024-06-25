@@ -258,7 +258,6 @@ select = [
     "SLF",    # Pylint Warning
     "SLOT",    # Ruff-specific rules
     "SIM",    # Ruff-specific rules
-    "TID",    # Ruff-specific rules
     "TCH",    # Ruff-specific rules
     "INT",
     "TD",

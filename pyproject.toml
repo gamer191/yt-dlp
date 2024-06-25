@@ -227,7 +227,6 @@ select = [
     "D",      # isort
     "UP",     # pyupgrade
     "YTT",    # pyupgrade
-    "ANN",    # pyupgrade
     "ASYNC",  # pyupgrade
     "TRIO",    # pyupgrade
     "S",

@@ -218,33 +218,65 @@ ignore = [
     "RUF100",  # unused-noqa (flake8 has slightly different behavior)
 ]
 select = [
+    "F",      # Pyflakes
     "E",      # pycodestyle Error
     "W",      # pycodestyle Warning
-    "F",      # Pyflakes
+    "C90",    # isort
     "I",      # isort
-    "Q",      # flake8-quotes
-    "N803",   # invalid-argument-name
-    "N804",   # invalid-first-argument-name-for-class-method
+    "N",      # isort
+    "D",      # isort
     "UP",     # pyupgrade
+    "YTT",    # pyupgrade
+    "ANN",    # pyupgrade
+    "ASYNC",  # pyupgrade
+    "TRIO",    # pyupgrade
+    "S",
+    "BLE",
+    "FBT",
     "B",      # flake8-bugbear
     "A",      # flake8-builtins
     "COM",    # flake8-commas
+    "CPY",    # flake8-commas
     "C4",     # flake8-comprehensions
-    "FA",     # flake8-future-annotations
-    "ISC",    # flake8-implicit-str-concat
-    "ICN003", # banned-import-from
+    "DTZ",     # flake8-comprehensions
     "T10",    # flake8-debugger
-    "PIE",    # flake8-pie
-    "T20",    # flake8-print
-    "RSE",    # flake8-raise
-    "RET504", # unnecessary-assign
-    "SIM",    # flake8-simplify
-    "TID251", # banned-api
-    "TD",     # flake8-todos
-    "PLC",    # Pylint Convention
-    "PLE",    # Pylint Error
-    "PLW",    # Pylint Warning
-    "RUF",    # Ruff-specific rules
+    "DJ",     # flake8-future-annotations
+    "EM",     # flake8-future-annotations
+    "EXE",    # flake8-implicit-str-concat
+    "FA", # banned-import-from
+    "ISC",      # flake8-quotes
+    "ICN",   # invalid-argument-name
+    "LOG",   # invalid-first-argument-name-for-class-method
+    "G",    # flake8-pie
+    "INP",    # flake8-print
+    "PIE",    # flake8-raise
+    "T20", # unnecessary-assign
+    "PYI",    # flake8-simplify
+    "PT", # banned-api
+    "Q",     # flake8-todos
+    "RSE",    # Pylint Convention
+    "RET",    # Pylint Error
+    "SLF",    # Pylint Warning
+    "SLOT",    # Ruff-specific rules
+    "SIM",    # Ruff-specific rules
+    "TID",    # Ruff-specific rules
+    "TCH",    # Ruff-specific rules
+    "INT",
+    "ARG",
+    "PTH",
+    "TD",
+    "FIX",
+    "ERA",
+    "PD",
+    "PGH",
+    "PL",
+    "TRY",
+    "FLY",
+    "NPY",
+    "AIR",
+    "PERF",
+    "FURB",
+    "RUF",
 ]
 
 [tool.ruff.lint.per-file-ignores]

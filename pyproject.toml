@@ -238,6 +238,7 @@ select = [
     "PIE",    # flake8-pie
     "T20",    # flake8-print
     "RSE",    # flake8-raise
+    "PGH004", # blanket-noqa
     "RET504", # unnecessary-assign
     "SIM",    # flake8-simplify
     "TID251", # banned-api

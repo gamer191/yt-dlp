@@ -29,7 +29,7 @@ class TechTVMITIE(InfoExtractor):
         video_id = self._match_id(url)
         raw_page = self._download_webpage(
             f'http://techtv.mit.edu/videos/{video_id}', video_id)
-        clean_page = re.compile(r'<!--.*?-->', re.S).sub('', raw_page)
+        clean_page = re.compile(r'<!--.*?-->', re.DOTALL).sub('', raw_page)
 
         base_url = self._proto_relative_url(self._search_regex(
             r'ipadUrl: \'(.+?cloudfront.net/)', raw_page, 'base url'), 'http:')

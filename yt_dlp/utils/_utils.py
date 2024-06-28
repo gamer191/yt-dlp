@@ -5118,7 +5118,7 @@ def orderedSet_from_options(options, alias_dict, *, use_regex=False, start=None)
             requested = orderedSet_from_options(val, alias_dict, start=requested)
             continue
 
-        current = (filter(re.compile(val, re.I).fullmatch, alias_dict['all']) if use_regex
+        current = (filter(re.compile(val, re.IGNORECASE).fullmatch, alias_dict['all']) if use_regex
                    else [val] if val in alias_dict['all'] else None)
         if current is None:
             raise ValueError(val)

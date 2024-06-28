@@ -205,10 +205,10 @@ class JSInterpreter:
         # TODO: new pattern class to execute matches with these flags
         'd': 1024,  # Generate indices for substring matches
         'g': 2048,  # Global search
-        'i': re.I,  # Case-insensitive search
-        'm': re.M,  # Multi-line search
-        's': re.S,  # Allows . to match newline characters
-        'u': re.U,  # Treat a pattern as a sequence of unicode code points
+        'i': re.IGNORECASE,  # Case-insensitive search
+        'm': re.MULTILINE,  # Multi-line search
+        's': re.DOTALL,  # Allows . to match newline characters
+        'u': re.UNICODE,  # Treat a pattern as a sequence of unicode code points
         'y': 4096,  # Perform a "sticky" search that matches starting at the current position in the target string
     }
 

@@ -246,6 +246,7 @@ select = [
     "PLC",    # Pylint Convention
     "PLE",    # Pylint Error
     "PLW",    # Pylint Warning
+    "FURB",   # refurb
     "RUF",    # Ruff-specific rules
 ]
 

@@ -8,4 +8,4 @@ jobs:
     - name: Install yt-dlp
       run: pip install yt-dlp
     - name: Run tests
-      run: yt-dlp "https://www.youtube.com/watch?v=JFV4u-NcBzg" --list-formats --print-traffic
+      run: yt-dlp "https://www.youtube.com/watch?v=JFV4u-NcBzg" --list-formats --extractor-args "youtube:player_client=ios,tv,web,web_safari"

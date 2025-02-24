@@ -1,0 +1,11 @@
+name: test-youtube
+on: [push]
+jobs:
+  tests:
+    name: yt-dlp
+    runs-on: ubuntu-latest
+    steps:
+    - name: Install yt-dlp
+      run: pip install yt-dlp
+    - name: Run tests
+      run: yt-dlp "https://www.youtube.com/watch?v=JFV4u-NcBzg" --list-formats --print-traffic

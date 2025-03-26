@@ -69,27 +69,27 @@ _SIG_TESTS = [
         'AOq0QJ8wRAIgXmPlOPSBkkUs1bYFYlJCfe29xx8j7v1pDL2QwbdV96sCIEzpWqMGkFR20CFOg51Tp-7vj_EMu-m37KtXJoOySqa0',
     ),
     (
-        'https://www.youtube.com/s/player/3bb1f723/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/3bb1f723/player_ias_tce.vflset/en_US/base.js',
         '2aq0aqSyOoJXtK73m-uME_jv7-pT15gOFC02RFkGMqWpzEICs69VdbwQ0LDp1v7j8xx92efCJlYFYb1sUkkBSPOlPmXgIARw8JQ0qOAOAA',
         'MyOSJXtKI3m-uME_jv7-pT12gOFC02RFkGoqWpzE0Cs69VdbwQ0LDp1v7j8xx92efCJlYFYb1sUkkBSPOlPmXgIARw8JQ0qOAOAA',
     ),
     (
-        'https://www.youtube.com/s/player/2f1832d2/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/2f1832d2/player_ias_tce.vflset/en_US/base.js',
         '2aq0aqSyOoJXtK73m-uME_jv7-pT15gOFC02RFkGMqWpzEICs69VdbwQ0LDp1v7j8xx92efCJlYFYb1sUkkBSPOlPmXgIARw8JQ0qOAOAA',
         '0QJ8wRAIgXmPlOPSBkkUs1bYFYlJCfe29xxAj7v1pDL0QwbdV96sCIEzpWqMGkFR20CFOg51Tp-7vj_EMu-m37KtXJ2OySqa0q',
     ),
     (
-        'https://www.youtube.com/s/player/643afba4/tv-player-ias.vflset/tv-player-ias.js',
+        'https://www.youtube.com/s/player/643afba4/player_ias_tce.vflset/en_US/base.js',
         '2aq0aqSyOoJXtK73m-uME_jv7-pT15gOFC02RFkGMqWpzEICs69VdbwQ0LDp1v7j8xx92efCJlYFYb1sUkkBSPOlPmXgIARw8JQ0qOAOAA',
         'AAOAOq0QJ8wRAIgXmPlOPSBkkUs1bYFYlJCfe29xx8j7vgpDL0QwbdV06sCIEzpWqMGkFR20CFOS21Tp-7vj_EMu-m37KtXJoOy1',
     ),
     (
-        'https://www.youtube.com/s/player/363db69b/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/363db69b/player_ias_tce.vflset/en_US/base.js',
         '2aq0aqSyOoJXtK73m-uME_jv7-pT15gOFC02RFkGMqWpzEICs69VdbwQ0LDp1v7j8xx92efCJlYFYb1sUkkBSPOlPmXgIARw8JQ0qOAOAA',
         '0aqSyOoJXtK73m-uME_jv7-pT15gOFC02RFkGMqWpz2ICs6EVdbwQ0LDp1v7j8xx92efCJlYFYb1sUkkBSPOlPmXgIARw8JQ0qOAOAA',
     ),
     (
-        'https://www.youtube.com/s/player/4fcd6e4a/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/4fcd6e4a/player_ias_tce.vflset/en_US/base.js',
         '2aq0aqSyOoJXtK73m-uME_jv7-pT15gOFC02RFkGMqWpzEICs69VdbwQ0LDp1v7j8xx92efCJlYFYb1sUkkBSPOlPmXgIARw8JQ0qOAOAA',
         'wAOAOq0QJ8ARAIgXmPlOPSBkkUs1bYFYlJCfe29xx8q7v1pDL0QwbdV96sCIEzpWqMGkFR20CFOg51Tp-7vj_EMu-m37KtXJoOySqa0',
     ),
@@ -209,15 +209,15 @@ _NSIG_TESTS = [
         'keLa5R2U00sR9SQK', 'N1OGyujjEwMnLw',
     ),
     (
-        'https://www.youtube.com/s/player/3bb1f723/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/3bb1f723/player_ias_tce.vflset/en_US/base.js',
         'gK15nzVyaXE9RsMP3z', 'ZFFWFLPWx9DEgQ',
     ),
     (
-        'https://www.youtube.com/s/player/2f1832d2/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/2f1832d2/player_ias_tce.vflset/en_US/base.js',
         'YWt1qdbe8SAfkoPHW5d', 'RrRjWQOJmBiP',
     ),
     (
-        'https://www.youtube.com/s/player/9c6dfc4a/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/9c6dfc4a/player_ias_tce.vflset/en_US/base.js',
         'jbu7ylIosQHyJyJV', 'uwI0ESiynAmhNg',
     ),
     (
@@ -233,23 +233,23 @@ _NSIG_TESTS = [
         'Ha7507LzRmH3Utygtj', 'ufTsrE0IVYrkl8v',
     ),
     (
-        'https://www.youtube.com/s/player/643afba4/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/643afba4/player_ias_tce.vflset/en_US/base.js',
         'N5uAlLqm0eg1GyHO', 'dCBQOejdq5s-ww',
     ),
     (
-        'https://www.youtube.com/s/player/69f581a5/tv-player-ias.vflset/tv-player-ias.js',
+        'https://www.youtube.com/s/player/69f581a5/player_ias_tce.vflset/en_US/base.js',
         '-qIP447rVlTTwaZjY', 'KNcGOksBAvwqQg',
     ),
     (
-        'https://www.youtube.com/s/player/643afba4/tv-player-ias.vflset/tv-player-ias.js',
+        'https://www.youtube.com/s/player/643afba4/player_ias_tce.vflset/en_US/base.js',
         'ir9-V6cdbCiyKxhr', '2PL7ZDYAALMfmA',
     ),
     (
-        'https://www.youtube.com/s/player/363db69b/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/363db69b/player_ias_tce.vflset/en_US/base.js',
         'eWYu5d5YeY_4LyEDc', 'XJQqf-N7Xra3gg',
     ),
     (
-        'https://www.youtube.com/s/player/4fcd6e4a/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/4fcd6e4a/player_ias_tce.vflset/en_US/base.js',
         'o_L251jm8yhZkWtBW', 'lXoxI3XvToqn6A',
     ),
 ]

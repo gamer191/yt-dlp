@@ -64,17 +64,17 @@ _SIG_TESTS = [
         '112AA5220913623229A412D56A40F11CB0AF14AE.3EE0950FCB14EEBCDC3B2AE808BF331D14E7FBF3',
     ),
     (
-        'https://www.youtube.com/s/player/6ed0d907/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/6ed0d907/tv-player-ias.vflset/tv-player-ias.js',
         '2aq0aqSyOoJXtK73m-uME_jv7-pT15gOFC02RFkGMqWpzEICs69VdbwQ0LDp1v7j8xx92efCJlYFYb1sUkkBSPOlPmXgIARw8JQ0qOAOAA',
         'AOq0QJ8wRAIgXmPlOPSBkkUs1bYFYlJCfe29xx8j7v1pDL2QwbdV96sCIEzpWqMGkFR20CFOg51Tp-7vj_EMu-m37KtXJoOySqa0',
     ),
     (
-        'https://www.youtube.com/s/player/3bb1f723/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/3bb1f723/tv-player-ias.vflset/tv-player-ias.js',
         '2aq0aqSyOoJXtK73m-uME_jv7-pT15gOFC02RFkGMqWpzEICs69VdbwQ0LDp1v7j8xx92efCJlYFYb1sUkkBSPOlPmXgIARw8JQ0qOAOAA',
         'MyOSJXtKI3m-uME_jv7-pT12gOFC02RFkGoqWpzE0Cs69VdbwQ0LDp1v7j8xx92efCJlYFYb1sUkkBSPOlPmXgIARw8JQ0qOAOAA',
     ),
     (
-        'https://www.youtube.com/s/player/2f1832d2/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/2f1832d2/tv-player-ias.vflset/tv-player-ias.js',
         '2aq0aqSyOoJXtK73m-uME_jv7-pT15gOFC02RFkGMqWpzEICs69VdbwQ0LDp1v7j8xx92efCJlYFYb1sUkkBSPOlPmXgIARw8JQ0qOAOAA',
         '0QJ8wRAIgXmPlOPSBkkUs1bYFYlJCfe29xxAj7v1pDL0QwbdV96sCIEzpWqMGkFR20CFOg51Tp-7vj_EMu-m37KtXJ2OySqa0q',
     ),
@@ -84,12 +84,12 @@ _SIG_TESTS = [
         'AAOAOq0QJ8wRAIgXmPlOPSBkkUs1bYFYlJCfe29xx8j7vgpDL0QwbdV06sCIEzpWqMGkFR20CFOS21Tp-7vj_EMu-m37KtXJoOy1',
     ),
     (
-        'https://www.youtube.com/s/player/363db69b/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/363db69b/tv-player-ias.vflset/tv-player-ias.js',
         '2aq0aqSyOoJXtK73m-uME_jv7-pT15gOFC02RFkGMqWpzEICs69VdbwQ0LDp1v7j8xx92efCJlYFYb1sUkkBSPOlPmXgIARw8JQ0qOAOAA',
         '0aqSyOoJXtK73m-uME_jv7-pT15gOFC02RFkGMqWpz2ICs6EVdbwQ0LDp1v7j8xx92efCJlYFYb1sUkkBSPOlPmXgIARw8JQ0qOAOAA',
     ),
     (
-        'https://www.youtube.com/s/player/4fcd6e4a/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/4fcd6e4a/tv-player-ias.vflset/tv-player-ias.js',
         '2aq0aqSyOoJXtK73m-uME_jv7-pT15gOFC02RFkGMqWpzEICs69VdbwQ0LDp1v7j8xx92efCJlYFYb1sUkkBSPOlPmXgIARw8JQ0qOAOAA',
         'wAOAOq0QJ8ARAIgXmPlOPSBkkUs1bYFYlJCfe29xx8q7v1pDL0QwbdV96sCIEzpWqMGkFR20CFOg51Tp-7vj_EMu-m37KtXJoOySqa0',
     ),
@@ -97,143 +97,143 @@ _SIG_TESTS = [
 
 _NSIG_TESTS = [
     (
-        'https://www.youtube.com/s/player/7862ca1f/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/7862ca1f/tv-player-ias.vflset/tv-player-ias.js',
         'X_LCxVDjAavgE5t', 'yxJ1dM6iz5ogUg',
     ),
     (
-        'https://www.youtube.com/s/player/9216d1f7/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/9216d1f7/tv-player-ias.vflset/tv-player-ias.js',
         'SLp9F5bwjAdhE9F-', 'gWnb9IK2DJ8Q1w',
     ),
     (
-        'https://www.youtube.com/s/player/f8cb7a3b/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/f8cb7a3b/tv-player-ias.vflset/tv-player-ias.js',
         'oBo2h5euWy6osrUt', 'ivXHpm7qJjJN',
     ),
     (
-        'https://www.youtube.com/s/player/2dfe380c/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/2dfe380c/tv-player-ias.vflset/tv-player-ias.js',
         'oBo2h5euWy6osrUt', '3DIBbn3qdQ',
     ),
     (
-        'https://www.youtube.com/s/player/f1ca6900/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/f1ca6900/tv-player-ias.vflset/tv-player-ias.js',
         'cu3wyu6LQn2hse', 'jvxetvmlI9AN9Q',
     ),
     (
-        'https://www.youtube.com/s/player/8040e515/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/8040e515/tv-player-ias.vflset/tv-player-ias.js',
         'wvOFaY-yjgDuIEg5', 'HkfBFDHmgw4rsw',
     ),
     (
-        'https://www.youtube.com/s/player/e06dea74/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/e06dea74/tv-player-ias.vflset/tv-player-ias.js',
         'AiuodmaDDYw8d3y4bf', 'ankd8eza2T6Qmw',
     ),
     (
-        'https://www.youtube.com/s/player/5dd88d1d/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/5dd88d1d/tv-player-ias.vflset/tv-player-ias.js',
         'kSxKFLeqzv_ZyHSAt', 'n8gS8oRlHOxPFA',
     ),
     (
-        'https://www.youtube.com/s/player/324f67b9/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/324f67b9/tv-player-ias.vflset/tv-player-ias.js',
         'xdftNy7dh9QGnhW', '22qLGxrmX8F1rA',
     ),
     (
-        'https://www.youtube.com/s/player/4c3f79c5/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/4c3f79c5/tv-player-ias.vflset/tv-player-ias.js',
         'TDCstCG66tEAO5pR9o', 'dbxNtZ14c-yWyw',
     ),
     (
-        'https://www.youtube.com/s/player/c81bbb4a/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/c81bbb4a/tv-player-ias.vflset/tv-player-ias.js',
         'gre3EcLurNY2vqp94', 'Z9DfGxWP115WTg',
     ),
     (
-        'https://www.youtube.com/s/player/1f7d5369/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/1f7d5369/tv-player-ias.vflset/tv-player-ias.js',
         'batNX7sYqIJdkJ', 'IhOkL_zxbkOZBw',
     ),
     (
-        'https://www.youtube.com/s/player/009f1d77/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/009f1d77/tv-player-ias.vflset/tv-player-ias.js',
         '5dwFHw8aFWQUQtffRq', 'audescmLUzI3jw',
     ),
     (
-        'https://www.youtube.com/s/player/dc0c6770/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/dc0c6770/tv-player-ias.vflset/tv-player-ias.js',
         '5EHDMgYLV6HPGk_Mu-kk', 'n9lUJLHbxUI0GQ',
     ),
     (
-        'https://www.youtube.com/s/player/113ca41c/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/113ca41c/tv-player-ias.vflset/tv-player-ias.js',
         'cgYl-tlYkhjT7A', 'hI7BBr2zUgcmMg',
     ),
     (
-        'https://www.youtube.com/s/player/c57c113c/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/c57c113c/tv-player-ias.vflset/tv-player-ias.js',
         'M92UUMHa8PdvPd3wyM', '3hPqLJsiNZx7yA',
     ),
     (
-        'https://www.youtube.com/s/player/5a3b6271/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/5a3b6271/tv-player-ias.vflset/tv-player-ias.js',
         'B2j7f_UPT4rfje85Lu_e', 'm5DmNymaGQ5RdQ',
     ),
     (
-        'https://www.youtube.com/s/player/7a062b77/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/7a062b77/tv-player-ias.vflset/tv-player-ias.js',
         'NRcE3y3mVtm_cV-W', 'VbsCYUATvqlt5w',
     ),
     (
-        'https://www.youtube.com/s/player/dac945fd/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/dac945fd/tv-player-ias.vflset/tv-player-ias.js',
         'o8BkRxXhuYsBCWi6RplPdP', '3Lx32v_hmzTm6A',
     ),
     (
-        'https://www.youtube.com/s/player/6f20102c/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/6f20102c/tv-player-ias.vflset/tv-player-ias.js',
         'lE8DhoDmKqnmJJ', 'pJTTX6XyJP2BYw',
     ),
     (
-        'https://www.youtube.com/s/player/cfa9e7cb/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/cfa9e7cb/tv-player-ias.vflset/tv-player-ias.js',
         'aCi3iElgd2kq0bxVbQ', 'QX1y8jGb2IbZ0w',
     ),
     (
-        'https://www.youtube.com/s/player/8c7583ff/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/8c7583ff/tv-player-ias.vflset/tv-player-ias.js',
         '1wWCVpRR96eAmMI87L', 'KSkWAVv1ZQxC3A',
     ),
     (
-        'https://www.youtube.com/s/player/b7910ca8/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/b7910ca8/tv-player-ias.vflset/tv-player-ias.js',
         '_hXMCwMt9qE310D', 'LoZMgkkofRMCZQ',
     ),
     (
-        'https://www.youtube.com/s/player/590f65a6/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/590f65a6/tv-player-ias.vflset/tv-player-ias.js',
         '1tm7-g_A9zsI8_Lay_', 'xI4Vem4Put_rOg',
     ),
     (
-        'https://www.youtube.com/s/player/b22ef6e7/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/b22ef6e7/tv-player-ias.vflset/tv-player-ias.js',
         'b6HcntHGkvBLk_FRf', 'kNPW6A7FyP2l8A',
     ),
     (
-        'https://www.youtube.com/s/player/3400486c/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/3400486c/tv-player-ias.vflset/tv-player-ias.js',
         'lL46g3XifCKUZn1Xfw', 'z767lhet6V2Skl',
     ),
     (
-        'https://www.youtube.com/s/player/20dfca59/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/20dfca59/tv-player-ias.vflset/tv-player-ias.js',
         '-fLCxedkAk4LUTK2', 'O8kfRq1y1eyHGw',
     ),
     (
-        'https://www.youtube.com/s/player/b12cc44b/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/b12cc44b/tv-player-ias.vflset/tv-player-ias.js',
         'keLa5R2U00sR9SQK', 'N1OGyujjEwMnLw',
     ),
     (
-        'https://www.youtube.com/s/player/3bb1f723/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/3bb1f723/tv-player-ias.vflset/tv-player-ias.js',
         'gK15nzVyaXE9RsMP3z', 'ZFFWFLPWx9DEgQ',
     ),
     (
-        'https://www.youtube.com/s/player/2f1832d2/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/2f1832d2/tv-player-ias.vflset/tv-player-ias.js',
         'YWt1qdbe8SAfkoPHW5d', 'RrRjWQOJmBiP',
     ),
     (
-        'https://www.youtube.com/s/player/9c6dfc4a/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/9c6dfc4a/tv-player-ias.vflset/tv-player-ias.js',
         'jbu7ylIosQHyJyJV', 'uwI0ESiynAmhNg',
     ),
     (
-        'https://www.youtube.com/s/player/e7567ecf/player_ias_tce.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/e7567ecf/tv-player-ias.vflset/tv-player-ias.js',
         'Sy4aDGc0VpYRR9ew_', '5UPOT1VhoZxNLQ',
     ),
     (
-        'https://www.youtube.com/s/player/d50f54ef/player_ias_tce.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/d50f54ef/tv-player-ias.vflset/tv-player-ias.js',
         'Ha7507LzRmH3Utygtj', 'XFTb2HoeOE5MHg',
     ),
     (
-        'https://www.youtube.com/s/player/074a8365/player_ias_tce.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/074a8365/tv-player-ias.vflset/tv-player-ias.js',
         'Ha7507LzRmH3Utygtj', 'ufTsrE0IVYrkl8v',
     ),
     (
-        'https://www.youtube.com/s/player/643afba4/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/643afba4/tv-player-ias.vflset/tv-player-ias.js',
         'N5uAlLqm0eg1GyHO', 'dCBQOejdq5s-ww',
     ),
     (
@@ -245,11 +245,11 @@ _NSIG_TESTS = [
         'ir9-V6cdbCiyKxhr', '2PL7ZDYAALMfmA',
     ),
     (
-        'https://www.youtube.com/s/player/363db69b/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/363db69b/tv-player-ias.vflset/tv-player-ias.js',
         'eWYu5d5YeY_4LyEDc', 'XJQqf-N7Xra3gg',
     ),
     (
-        'https://www.youtube.com/s/player/4fcd6e4a/player_ias.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/4fcd6e4a/tv-player-ias.vflset/tv-player-ias.js',
         'o_L251jm8yhZkWtBW', 'lXoxI3XvToqn6A',
     ),
 ]

@@ -64,32 +64,32 @@ _SIG_TESTS = [
         '112AA5220913623229A412D56A40F11CB0AF14AE.3EE0950FCB14EEBCDC3B2AE808BF331D14E7FBF3',
     ),
     (
-        'https://www.youtube.com/s/player/6ed0d907/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/6ed0d907/player-plasma-ias-tablet-en_US.vflset/base.js',
         '2aq0aqSyOoJXtK73m-uME_jv7-pT15gOFC02RFkGMqWpzEICs69VdbwQ0LDp1v7j8xx92efCJlYFYb1sUkkBSPOlPmXgIARw8JQ0qOAOAA',
         'AOq0QJ8wRAIgXmPlOPSBkkUs1bYFYlJCfe29xx8j7v1pDL2QwbdV96sCIEzpWqMGkFR20CFOg51Tp-7vj_EMu-m37KtXJoOySqa0',
     ),
     (
-        'https://www.youtube.com/s/player/3bb1f723/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/3bb1f723/player-plasma-ias-tablet-en_US.vflset/base.js',
         '2aq0aqSyOoJXtK73m-uME_jv7-pT15gOFC02RFkGMqWpzEICs69VdbwQ0LDp1v7j8xx92efCJlYFYb1sUkkBSPOlPmXgIARw8JQ0qOAOAA',
         'MyOSJXtKI3m-uME_jv7-pT12gOFC02RFkGoqWpzE0Cs69VdbwQ0LDp1v7j8xx92efCJlYFYb1sUkkBSPOlPmXgIARw8JQ0qOAOAA',
     ),
     (
-        'https://www.youtube.com/s/player/2f1832d2/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/2f1832d2/player-plasma-ias-tablet-en_US.vflset/base.js',
         '2aq0aqSyOoJXtK73m-uME_jv7-pT15gOFC02RFkGMqWpzEICs69VdbwQ0LDp1v7j8xx92efCJlYFYb1sUkkBSPOlPmXgIARw8JQ0qOAOAA',
         '0QJ8wRAIgXmPlOPSBkkUs1bYFYlJCfe29xxAj7v1pDL0QwbdV96sCIEzpWqMGkFR20CFOg51Tp-7vj_EMu-m37KtXJ2OySqa0q',
     ),
     (
-        'https://www.youtube.com/s/player/643afba4/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/643afba4/player-plasma-ias-tablet-en_US.vflset/base.js',
         '2aq0aqSyOoJXtK73m-uME_jv7-pT15gOFC02RFkGMqWpzEICs69VdbwQ0LDp1v7j8xx92efCJlYFYb1sUkkBSPOlPmXgIARw8JQ0qOAOAA',
         'AAOAOq0QJ8wRAIgXmPlOPSBkkUs1bYFYlJCfe29xx8j7vgpDL0QwbdV06sCIEzpWqMGkFR20CFOS21Tp-7vj_EMu-m37KtXJoOy1',
     ),
     (
-        'https://www.youtube.com/s/player/363db69b/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/363db69b/player-plasma-ias-tablet-en_US.vflset/base.js',
         '2aq0aqSyOoJXtK73m-uME_jv7-pT15gOFC02RFkGMqWpzEICs69VdbwQ0LDp1v7j8xx92efCJlYFYb1sUkkBSPOlPmXgIARw8JQ0qOAOAA',
         '0aqSyOoJXtK73m-uME_jv7-pT15gOFC02RFkGMqWpz2ICs6EVdbwQ0LDp1v7j8xx92efCJlYFYb1sUkkBSPOlPmXgIARw8JQ0qOAOAA',
     ),
     (
-        'https://www.youtube.com/s/player/4fcd6e4a/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/4fcd6e4a/player-plasma-ias-tablet-en_US.vflset/base.js',
         '2aq0aqSyOoJXtK73m-uME_jv7-pT15gOFC02RFkGMqWpzEICs69VdbwQ0LDp1v7j8xx92efCJlYFYb1sUkkBSPOlPmXgIARw8JQ0qOAOAA',
         'wAOAOq0QJ8ARAIgXmPlOPSBkkUs1bYFYlJCfe29xx8q7v1pDL0QwbdV96sCIEzpWqMGkFR20CFOg51Tp-7vj_EMu-m37KtXJoOySqa0',
     ),
@@ -97,159 +97,159 @@ _SIG_TESTS = [
 
 _NSIG_TESTS = [
     (
-        'https://www.youtube.com/s/player/7862ca1f/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/7862ca1f/player-plasma-ias-tablet-en_US.vflset/base.js',
         'X_LCxVDjAavgE5t', 'yxJ1dM6iz5ogUg',
     ),
     (
-        'https://www.youtube.com/s/player/9216d1f7/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/9216d1f7/player-plasma-ias-tablet-en_US.vflset/base.js',
         'SLp9F5bwjAdhE9F-', 'gWnb9IK2DJ8Q1w',
     ),
     (
-        'https://www.youtube.com/s/player/f8cb7a3b/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/f8cb7a3b/player-plasma-ias-tablet-en_US.vflset/base.js',
         'oBo2h5euWy6osrUt', 'ivXHpm7qJjJN',
     ),
     (
-        'https://www.youtube.com/s/player/2dfe380c/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/2dfe380c/player-plasma-ias-tablet-en_US.vflset/base.js',
         'oBo2h5euWy6osrUt', '3DIBbn3qdQ',
     ),
     (
-        'https://www.youtube.com/s/player/f1ca6900/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/f1ca6900/player-plasma-ias-tablet-en_US.vflset/base.js',
         'cu3wyu6LQn2hse', 'jvxetvmlI9AN9Q',
     ),
     (
-        'https://www.youtube.com/s/player/8040e515/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/8040e515/player-plasma-ias-tablet-en_US.vflset/base.js',
         'wvOFaY-yjgDuIEg5', 'HkfBFDHmgw4rsw',
     ),
     (
-        'https://www.youtube.com/s/player/e06dea74/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/e06dea74/player-plasma-ias-tablet-en_US.vflset/base.js',
         'AiuodmaDDYw8d3y4bf', 'ankd8eza2T6Qmw',
     ),
     (
-        'https://www.youtube.com/s/player/5dd88d1d/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/5dd88d1d/player-plasma-ias-tablet-en_US.vflset/base.js',
         'kSxKFLeqzv_ZyHSAt', 'n8gS8oRlHOxPFA',
     ),
     (
-        'https://www.youtube.com/s/player/324f67b9/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/324f67b9/player-plasma-ias-tablet-en_US.vflset/base.js',
         'xdftNy7dh9QGnhW', '22qLGxrmX8F1rA',
     ),
     (
-        'https://www.youtube.com/s/player/4c3f79c5/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/4c3f79c5/player-plasma-ias-tablet-en_US.vflset/base.js',
         'TDCstCG66tEAO5pR9o', 'dbxNtZ14c-yWyw',
     ),
     (
-        'https://www.youtube.com/s/player/c81bbb4a/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/c81bbb4a/player-plasma-ias-tablet-en_US.vflset/base.js',
         'gre3EcLurNY2vqp94', 'Z9DfGxWP115WTg',
     ),
     (
-        'https://www.youtube.com/s/player/1f7d5369/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/1f7d5369/player-plasma-ias-tablet-en_US.vflset/base.js',
         'batNX7sYqIJdkJ', 'IhOkL_zxbkOZBw',
     ),
     (
-        'https://www.youtube.com/s/player/009f1d77/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/009f1d77/player-plasma-ias-tablet-en_US.vflset/base.js',
         '5dwFHw8aFWQUQtffRq', 'audescmLUzI3jw',
     ),
     (
-        'https://www.youtube.com/s/player/dc0c6770/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/dc0c6770/player-plasma-ias-tablet-en_US.vflset/base.js',
         '5EHDMgYLV6HPGk_Mu-kk', 'n9lUJLHbxUI0GQ',
     ),
     (
-        'https://www.youtube.com/s/player/113ca41c/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/113ca41c/player-plasma-ias-tablet-en_US.vflset/base.js',
         'cgYl-tlYkhjT7A', 'hI7BBr2zUgcmMg',
     ),
     (
-        'https://www.youtube.com/s/player/c57c113c/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/c57c113c/player-plasma-ias-tablet-en_US.vflset/base.js',
         'M92UUMHa8PdvPd3wyM', '3hPqLJsiNZx7yA',
     ),
     (
-        'https://www.youtube.com/s/player/5a3b6271/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/5a3b6271/player-plasma-ias-tablet-en_US.vflset/base.js',
         'B2j7f_UPT4rfje85Lu_e', 'm5DmNymaGQ5RdQ',
     ),
     (
-        'https://www.youtube.com/s/player/7a062b77/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/7a062b77/player-plasma-ias-tablet-en_US.vflset/base.js',
         'NRcE3y3mVtm_cV-W', 'VbsCYUATvqlt5w',
     ),
     (
-        'https://www.youtube.com/s/player/dac945fd/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/dac945fd/player-plasma-ias-tablet-en_US.vflset/base.js',
         'o8BkRxXhuYsBCWi6RplPdP', '3Lx32v_hmzTm6A',
     ),
     (
-        'https://www.youtube.com/s/player/6f20102c/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/6f20102c/player-plasma-ias-tablet-en_US.vflset/base.js',
         'lE8DhoDmKqnmJJ', 'pJTTX6XyJP2BYw',
     ),
     (
-        'https://www.youtube.com/s/player/cfa9e7cb/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/cfa9e7cb/player-plasma-ias-tablet-en_US.vflset/base.js',
         'aCi3iElgd2kq0bxVbQ', 'QX1y8jGb2IbZ0w',
     ),
     (
-        'https://www.youtube.com/s/player/8c7583ff/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/8c7583ff/player-plasma-ias-tablet-en_US.vflset/base.js',
         '1wWCVpRR96eAmMI87L', 'KSkWAVv1ZQxC3A',
     ),
     (
-        'https://www.youtube.com/s/player/b7910ca8/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/b7910ca8/player-plasma-ias-tablet-en_US.vflset/base.js',
         '_hXMCwMt9qE310D', 'LoZMgkkofRMCZQ',
     ),
     (
-        'https://www.youtube.com/s/player/590f65a6/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/590f65a6/player-plasma-ias-tablet-en_US.vflset/base.js',
         '1tm7-g_A9zsI8_Lay_', 'xI4Vem4Put_rOg',
     ),
     (
-        'https://www.youtube.com/s/player/b22ef6e7/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/b22ef6e7/player-plasma-ias-tablet-en_US.vflset/base.js',
         'b6HcntHGkvBLk_FRf', 'kNPW6A7FyP2l8A',
     ),
     (
-        'https://www.youtube.com/s/player/3400486c/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/3400486c/player-plasma-ias-tablet-en_US.vflset/base.js',
         'lL46g3XifCKUZn1Xfw', 'z767lhet6V2Skl',
     ),
     (
-        'https://www.youtube.com/s/player/20dfca59/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/20dfca59/player-plasma-ias-tablet-en_US.vflset/base.js',
         '-fLCxedkAk4LUTK2', 'O8kfRq1y1eyHGw',
     ),
     (
-        'https://www.youtube.com/s/player/b12cc44b/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/b12cc44b/player-plasma-ias-tablet-en_US.vflset/base.js',
         'keLa5R2U00sR9SQK', 'N1OGyujjEwMnLw',
     ),
     (
-        'https://www.youtube.com/s/player/3bb1f723/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/3bb1f723/player-plasma-ias-tablet-en_US.vflset/base.js',
         'gK15nzVyaXE9RsMP3z', 'ZFFWFLPWx9DEgQ',
     ),
     (
-        'https://www.youtube.com/s/player/2f1832d2/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/2f1832d2/player-plasma-ias-tablet-en_US.vflset/base.js',
         'YWt1qdbe8SAfkoPHW5d', 'RrRjWQOJmBiP',
     ),
     (
-        'https://www.youtube.com/s/player/9c6dfc4a/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/9c6dfc4a/player-plasma-ias-tablet-en_US.vflset/base.js',
         'jbu7ylIosQHyJyJV', 'uwI0ESiynAmhNg',
     ),
     (
-        'https://www.youtube.com/s/player/e7567ecf/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/e7567ecf/player-plasma-ias-tablet-en_US.vflset/base.js',
         'Sy4aDGc0VpYRR9ew_', '5UPOT1VhoZxNLQ',
     ),
     (
-        'https://www.youtube.com/s/player/d50f54ef/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/d50f54ef/player-plasma-ias-tablet-en_US.vflset/base.js',
         'Ha7507LzRmH3Utygtj', 'XFTb2HoeOE5MHg',
     ),
     (
-        'https://www.youtube.com/s/player/074a8365/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/074a8365/player-plasma-ias-tablet-en_US.vflset/base.js',
         'Ha7507LzRmH3Utygtj', 'ufTsrE0IVYrkl8v',
     ),
     (
-        'https://www.youtube.com/s/player/643afba4/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/643afba4/player-plasma-ias-tablet-en_US.vflset/base.js',
         'N5uAlLqm0eg1GyHO', 'dCBQOejdq5s-ww',
     ),
     (
-        'https://www.youtube.com/s/player/69f581a5/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/69f581a5/player-plasma-ias-tablet-en_US.vflset/base.js',
         '-qIP447rVlTTwaZjY', 'KNcGOksBAvwqQg',
     ),
     (
-        'https://www.youtube.com/s/player/643afba4/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/643afba4/player-plasma-ias-tablet-en_US.vflset/base.js',
         'ir9-V6cdbCiyKxhr', '2PL7ZDYAALMfmA',
     ),
     (
-        'https://www.youtube.com/s/player/363db69b/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/363db69b/player-plasma-ias-tablet-en_US.vflset/base.js',
         'eWYu5d5YeY_4LyEDc', 'XJQqf-N7Xra3gg',
     ),
     (
-        'https://www.youtube.com/s/player/4fcd6e4a/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/4fcd6e4a/player-plasma-ias-tablet-en_US.vflset/base.js',
         'o_L251jm8yhZkWtBW', 'lXoxI3XvToqn6A',
     ),
 ]

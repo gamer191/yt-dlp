@@ -79,7 +79,7 @@ _SIG_TESTS = [
         '0QJ8wRAIgXmPlOPSBkkUs1bYFYlJCfe29xxAj7v1pDL0QwbdV96sCIEzpWqMGkFR20CFOg51Tp-7vj_EMu-m37KtXJ2OySqa0q',
     ),
     (
-        'https://www.youtube.com/s/player/643afba4/tv-player-ias.vflset/tv-player-ias.js',
+        'https://www.youtube.com/s/player/643afba4/player_ias.vflset/en_US/base.js',
         '2aq0aqSyOoJXtK73m-uME_jv7-pT15gOFC02RFkGMqWpzEICs69VdbwQ0LDp1v7j8xx92efCJlYFYb1sUkkBSPOlPmXgIARw8JQ0qOAOAA',
         'AAOAOq0QJ8wRAIgXmPlOPSBkkUs1bYFYlJCfe29xx8j7vgpDL0QwbdV06sCIEzpWqMGkFR20CFOS21Tp-7vj_EMu-m37KtXJoOy1',
     ),
@@ -125,7 +125,7 @@ _NSIG_TESTS = [
         'AiuodmaDDYw8d3y4bf', 'ankd8eza2T6Qmw',
     ),
     (
-        'https://www.youtube.com/s/player/5dd88d1d/player-plasma-ias-phone-en_US.vflset/base.js',
+        'https://www.youtube.com/s/player/5dd88d1d/player_ias.vflset/en_US/base.js',
         'kSxKFLeqzv_ZyHSAt', 'n8gS8oRlHOxPFA',
     ),
     (
@@ -221,15 +221,15 @@ _NSIG_TESTS = [
         'jbu7ylIosQHyJyJV', 'uwI0ESiynAmhNg',
     ),
     (
-        'https://www.youtube.com/s/player/e7567ecf/player_ias_tce.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/e7567ecf/player_ias.vflset/en_US/base.js',
         'Sy4aDGc0VpYRR9ew_', '5UPOT1VhoZxNLQ',
     ),
     (
-        'https://www.youtube.com/s/player/d50f54ef/player_ias_tce.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/d50f54ef/player_ias.vflset/en_US/base.js',
         'Ha7507LzRmH3Utygtj', 'XFTb2HoeOE5MHg',
     ),
     (
-        'https://www.youtube.com/s/player/074a8365/player_ias_tce.vflset/en_US/base.js',
+        'https://www.youtube.com/s/player/074a8365/player_ias.vflset/en_US/base.js',
         'Ha7507LzRmH3Utygtj', 'ufTsrE0IVYrkl8v',
     ),
     (
@@ -237,11 +237,11 @@ _NSIG_TESTS = [
         'N5uAlLqm0eg1GyHO', 'dCBQOejdq5s-ww',
     ),
     (
-        'https://www.youtube.com/s/player/69f581a5/tv-player-ias.vflset/tv-player-ias.js',
+        'https://www.youtube.com/s/player/69f581a5/player_ias.vflset/en_US/base.js',
         '-qIP447rVlTTwaZjY', 'KNcGOksBAvwqQg',
     ),
     (
-        'https://www.youtube.com/s/player/643afba4/tv-player-ias.vflset/tv-player-ias.js',
+        'https://www.youtube.com/s/player/643afba4/player_ias.vflset/en_US/base.js',
         'ir9-V6cdbCiyKxhr', '2PL7ZDYAALMfmA',
     ),
     (

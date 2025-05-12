@@ -3,7 +3,7 @@ on: push
   
 jobs:
   tests:
-    name: Free threading:${{ matrix.freethreaded }}
+    name: ${{ matrix.os-version }} ${{ matrix.python-version }} Free threading:${{ matrix.freethreaded }}
     runs-on: ${{ matrix.os-version }}
     strategy:
       fail-fast: false

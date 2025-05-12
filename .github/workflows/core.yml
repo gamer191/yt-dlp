@@ -3,7 +3,7 @@ on: push
   
 jobs:
   tests:
-    name: Free threading:${{ matrix.freethreading }}
+    name: Free threading:${{ matrix.freethreaded }}
     runs-on: ${{ matrix.os-version }}
     strategy:
       fail-fast: false
@@ -15,5 +15,5 @@ jobs:
     - uses: actions/setup-python@v5
       with:
         python-version: ${{ matrix.python-version }}
-        freethreaded: ${{ matrix.freethreading }}
+        freethreaded: ${{ matrix.freethreaded }}
     - run: python3 -m pip install cffi

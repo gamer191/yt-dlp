@@ -3,14 +3,17 @@ on: push
   
 jobs:
   tests:
-    name: Install cffi
-    runs-on: 'windows-latest'
+    name: Free threading:${{ matrix.freethreading }}
+    runs-on: ${{ matrix.os-version }}
     strategy:
       fail-fast: false
       matrix:
-        command: [python3 -m pip install cffi,Py_GIL_DISABLED=0 python3 -m pip install cffi]
+        os-version: ['ubuntu-latest','windows-latest','macos-latest']
+        python-version: ['3.14.0-alpha.1','3.14.0-alpha.2','3.14.0-alpha.3','3.14.0-alpha.4','3.14.0-alpha.5','3.14.0-alpha.6','3.14.0-alpha.7','3.14.0-beta.1']
+        freethreaded: [true, false]
     steps:
     - uses: actions/setup-python@v5
       with:
-        python-version: '3.14.0-beta.1'
-    - run: ${{ matrix.command }}
+        python-version: ${{ matrix.python-version }}
+        freethreaded: ${{ matrix.freethreading }}
+    - run: python3 -m pip install cffi

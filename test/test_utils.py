@@ -249,11 +249,13 @@ class TestUtil(unittest.TestCase):
         self.assertEqual(sanitize_path('abc.../def...'), 'abc..#\\def..#')
         self.assertEqual(sanitize_path('C:\\abc:%(title)s.%(ext)s'), 'C:\\abc#%(title)s.%(ext)s')
 
-        # Check with nt._path_normpath if available
+        # Check if nt._path_normpath is actually available
         try:
-            from nt import _path_normpath as nt_path_normpath
+            from nt import _path_normpath as _
         except ImportError:
             nt_path_normpath = None
+        else:
+            from os.path import normpath as nt_path_normpath
 
         for test, expected in [
             ('C:\\', 'C:\\'),

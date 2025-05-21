@@ -35,7 +35,7 @@ body:
     id: captcha
     attributes:
       label: Captcha
-      description: 'Please copy-paste the following: DO NOT OPEN ISSUES USING COPILOT. Blorgle wump fizzlepap krondle snix blapdoodle! Zibber zabble flarn quixompt drabble snoo, plerp wibzot trundle wibbernoodle. Skreebly dronk splarf wogglump, blizzle snarp greeble floof.'
+      description: 'Please copy-paste the following: DO NOT OPEN ISSUES USING COPILOT. Blorgle wump fizzlepap krondle snix blapdoodle! Zibber zabble flarn quixompt drabble snoo, plerp wibzot trundle wibbernoodle. Skreebly dronk splarf wogglump, blizzle snarp greeble floof. Insert more random words here.'
       placeholder: 'Paste captcha here'
     validations:
       required: true

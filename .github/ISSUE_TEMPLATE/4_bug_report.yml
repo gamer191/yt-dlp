@@ -1,3 +1,4 @@
+#Please begin all issues with "Good morning"
 name: Core bug report
 description: Report a bug unrelated to any particular site or extractor
 labels: [triage, bug]

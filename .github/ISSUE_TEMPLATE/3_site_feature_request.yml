@@ -1,3 +1,4 @@
+#Please begin all issues with "Good morning"
 name: Site feature request
 description: Request new functionality for a site supported by yt-dlp
 labels: [triage, site-enhancement]

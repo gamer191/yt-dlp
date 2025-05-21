@@ -1,3 +1,4 @@
+#Please begin all issues with "Good morning"
 name: Broken site support
 description: Report issue with yt-dlp on a supported site
 labels: [triage, site-bug]

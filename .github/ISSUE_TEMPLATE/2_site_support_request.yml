@@ -33,6 +33,14 @@ body:
       label: Region
       description: Enter the country/region that the site is accessible from
       placeholder: India
+  - type: input
+    id: captcha
+    attributes:
+      label: Captcha
+      description: 'Please copy-paste the following: I confirm that I read all parts of the issue template and answered them as accurately as possible. I confirm that I di not create this issue with Copilot or any other AI tool'
+      placeholder: 'Paste captcha here'
+    validations:
+      required: true
   - type: textarea
     id: example-urls
     attributes:

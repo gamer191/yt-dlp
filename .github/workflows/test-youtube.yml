@@ -12,4 +12,4 @@ jobs:
     - run: sudo apt install torsocks
     - run: pip install --force-reinstall "yt-dlp @ https://github.com/gamer191/yt-dlp/archive/youtube-simply.tar.gz"
     - name: Run tests
-      run: torsocks yt-dlp "https://www.youtube.com/watch?v=JFV4u-NcBzg" --list-formats --extractor-args "youtube:player_client=tv,tv_simply;formats=duplicate"||true
+      run: torsocks yt-dlp "https://www.youtube.com/watch?v=JFV4u-NcBzg" --list-formats --allow-unplayable-formats --extractor-args "youtube:player_client=tv,tv_simply;formats=duplicate"||true

@@ -13,6 +13,6 @@ jobs:
     - run: pip install --pre yt-dlp
     - run: sudo apt install torsocks
     - name: Run tests
-      run: until ! torsocks yt-dlp "https://www.youtube.com/watch?v=JFV4u-NcBzg" --skip-download --print-to-file formats_table formats.txt --allow-unplayable-formats --extractor-args "youtube:player_client=tv"; do echo "Try again"; done
+      run: until torsocks yt-dlp "https://www.youtube.com/watch?v=JFV4u-NcBzg" --skip-download --print-to-file formats_table formats.txt --allow-unplayable-formats --extractor-args "youtube:player_client=tv"; do echo "Try again"; done
     - run: cat formats.txt
     - run: grep --ignore-case drm formats.txt

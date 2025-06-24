@@ -15,3 +15,4 @@ jobs:
     - name: Run tests
       run: until torsocks yt-dlp "https://www.youtube.com/watch?v=JFV4u-NcBzg" --print-to-file "%(formats_table)s" temp.txt --allow-unplayable-formats --extractor-args ${{ matrix.extractor-args }} --simulate; do true;done
     - run: grep --ignore-case DRM temp.txt
+    - run: cat temp.txt

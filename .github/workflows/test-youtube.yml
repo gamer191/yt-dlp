@@ -8,7 +8,6 @@ jobs:
       fail-fast: false
       matrix:
         trial: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
-        extractor-args: ['"youtube:simply=1;player_client=tv_simply"','"youtube:tv=1;player_client=tv"']
     steps:
     - run: pip install yt-dlp
     - run: sudo apt install torsocks

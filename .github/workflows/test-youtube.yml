@@ -7,10 +7,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        trial: [1,2,3,4,5,6,7,8,9,10]
+        trial: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
     steps:
     - run: pip install yt-dlp
     - run: sudo apt install torsocks
     - name: Run tests
-      run: until grep --ignore-case DRM formats.txt; do (rm formats.txt||true)&&(torsocks yt-dlp JFV4u-NcBzg JFV4u-NcBzg --print-to-file "%(formats_table)s" formats.txt --allow-unplayable-formats --extractor-args "youtube:player_client=tv_simply,tv;formats=duplicate" --simulate||true);done
+      run: until grep --ignore-case DRM formats.txt; do (rm formats.txt||true)&&(torsocks yt-dlp JFV4u-NcBzg --print-to-file "%(formats_table)s" formats.txt --allow-unplayable-formats --extractor-args "youtube:player_client=tv_simply,tv;formats=duplicate" --simulate||true);done
     - run: cat formats.txt

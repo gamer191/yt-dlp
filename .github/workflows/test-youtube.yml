@@ -1,5 +1,5 @@
 name: test-youtube
-on: [push]
+on: [push,workflow_dispatch]
 jobs:
   tests:
     name: yt-dlp

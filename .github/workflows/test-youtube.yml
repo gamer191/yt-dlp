@@ -12,5 +12,5 @@ jobs:
     - run: pip install yt-dlp==2025.06.09
     - run: sudo apt install torsocks
     - name: Run tests
-      run: until grep --ignore-case DRM formats.txt; do (rm formats.txt||true)&&(torsocks yt-dlp JFV4u-NcBzg --print-to-file "%(formats_table)s" formats.txt --allow-unplayable-formats --extractor-args "youtube:player_client=tv_simply,tv;formats=duplicate" --simulate||true);done
+      run: until grep --ignore-case DRM formats.txt; do (rm formats.txt||true)&&(torsocks yt-dlp JFV4u-NcBzg --print-to-file "%(formats_table)s" formats.txt --allow-unplayable-formats --extractor-args "youtube:player_client=tv_simply,tv;formats=duplicate" --simulate||true)&&(sudo service tor restart);done
     - run: cat formats.txt

@@ -355,6 +355,8 @@ jobs:
           PYTHON_VERSION: 3.12.10
           MACOSX_DEPLOYMENT_TARGET: 10.9 # Used up by the Python build tools
         run: |
+          echo $BASH_VERSINFO
+          echo $ZSH_VERSION
           curl "https://www.python.org/ftp/python/${PYTHON_VERSION}/python-${PYTHON_VERSION}-macos11.pkg" -o "python.pkg"
           sudo installer -pkg python.pkg -target /
           brew list
@@ -405,6 +407,8 @@ jobs:
           PYTHON_VERSION: 3.12.10
           MACOSX_DEPLOYMENT_TARGET: 10.9 # Used up by the Python build tools
         run: |
+          echo $BASH_VERSINFO
+          echo $ZSH_VERSION
           curl "https://www.python.org/ftp/python/${PYTHON_VERSION}/python-${PYTHON_VERSION}-macos11.pkg" -o "python.pkg"
           sudo installer -pkg python.pkg -target /
           brew list

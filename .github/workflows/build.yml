@@ -352,7 +352,7 @@ jobs:
       - name: Install Python
         # We need the official Python, because the GA ones only support newer macOS versions
         env:
-          PYTHON_VERSION: 3.10.5
+          PYTHON_VERSION: 3.12.10
           MACOSX_DEPLOYMENT_TARGET: 10.9 # Used up by the Python build tools
         run: |
           # Hack to get the latest patch version. Uncomment if needed

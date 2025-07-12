@@ -6,6 +6,7 @@ jobs:
     strategy:
       matrix:
         executable: [yt-dlp_macos,yt-dlp_macos_legacy]
+      fail-fast: false
     
     steps:
     - run: |

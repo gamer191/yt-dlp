@@ -357,7 +357,7 @@ jobs:
         run: |
           curl "https://www.python.org/ftp/python/${PYTHON_VERSION}/python-${PYTHON_VERSION}-macos11.pkg" -o "python.pkg"
           sudo installer -pkg python.pkg -target /
-          which --all python3
+          which -a python3
           python3 --version
       - name: Install Requirements
         run: |
@@ -407,7 +407,7 @@ jobs:
         run: |
           curl "https://www.python.org/ftp/python/${PYTHON_VERSION}/python-${PYTHON_VERSION}-macos11.pkg" -o "python.pkg"
           sudo installer -pkg python.pkg -target /
-          which --all python3
+          which -a python3
           python3 --version
       - name: Install Requirements
         run: |

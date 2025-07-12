@@ -353,9 +353,12 @@ jobs:
       - name: Install Python
         # We need the official Python, because the GA ones only support newer macOS versions
         env:
-          PYTHON_VERSION: 3.12.10
+          PYTHON_VERSION: 3.10.5
           MACOSX_DEPLOYMENT_TARGET: 10.9 # Used up by the Python build tools
         run: |
+          # Hack to get the latest patch version. Uncomment if needed
+          #brew install python@3.10
+          #export PYTHON_VERSION=$( $(brew --prefix)/opt/python@3.10/bin/python3 --version | cut -d ' ' -f 2 )
           brew uninstall python3 aws-sam-cli pipx # aws-sam-cli and pipx depend on python3, so remove them both
           curl "https://www.python.org/ftp/python/${PYTHON_VERSION}/python-${PYTHON_VERSION}-macos11.pkg" -o "python.pkg"
           sudo installer -pkg python.pkg -target /

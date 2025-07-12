@@ -242,7 +242,7 @@ jobs:
     permissions:
       contents: read
       actions: write  # For cleaning up cache
-    runs-on: macos-14-large
+    runs-on: macos-14
 
     steps:
       - uses: actions/checkout@v4
@@ -261,6 +261,7 @@ jobs:
       - name: Install Requirements
         run: |
           brew install coreutils
+          brew uninstall python3 aws-sam-cli pipx # aws-sam-cli and pipx depend on python3, so remove them both
           python3 -m venv ~/yt-dlp-build-venv
           source ~/yt-dlp-build-venv/bin/activate
           python3 devscripts/install_deps.py -o --include build
@@ -345,7 +346,7 @@ jobs:
   macos_legacy:
     needs: process
     if: inputs.macos_legacy
-    runs-on: macos-14-large
+    runs-on: macos-14
 
     steps:
       - uses: actions/checkout@v4
@@ -358,6 +359,7 @@ jobs:
           # Hack to get the latest patch version. Uncomment if needed
           #brew install python@3.10
           #export PYTHON_VERSION=$( $(brew --prefix)/opt/python@3.10/bin/python3 --version | cut -d ' ' -f 2 )
+          brew uninstall python3 aws-sam-cli pipx # aws-sam-cli and pipx depend on python3, so remove them both
           curl "https://www.python.org/ftp/python/${PYTHON_VERSION}/python-${PYTHON_VERSION}-macos11.pkg" -o "python.pkg"
           sudo installer -pkg python.pkg -target /
           python3 --version

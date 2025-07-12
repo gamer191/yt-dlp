@@ -345,6 +345,56 @@ jobs:
   macos_legacy:
     needs: process
     if: inputs.macos_legacy
+    runs-on: macos-13
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Python
+        # We need the official Python, because the GA ones only support newer macOS versions
+        env:
+          PYTHON_VERSION: 3.12.10
+          MACOSX_DEPLOYMENT_TARGET: 10.9 # Used up by the Python build tools
+        run: |
+          curl "https://www.python.org/ftp/python/${PYTHON_VERSION}/python-${PYTHON_VERSION}-macos11.pkg" -o "python.pkg"
+          sudo installer -pkg python.pkg -target /
+          which python3
+          python3 --version
+      - name: Install Requirements
+        run: |
+          brew install coreutils
+          python3 devscripts/install_deps.py --user -o --include build
+          python3 devscripts/install_deps.py --user --include pyinstaller
+
+      - name: Prepare
+        run: |
+          python3 devscripts/update-version.py -c "${{ inputs.channel }}" -r "${{ needs.process.outputs.origin }}" "${{ inputs.version }}"
+          python3 devscripts/make_lazy_extractors.py
+      - name: Build
+        run: |
+          python3 -m bundle.pyinstaller
+          mv dist/yt-dlp_macos dist/yt-dlp_macos_legacy
+
+      - name: Verify --update-to
+        if: vars.UPDATE_TO_VERIFICATION
+        run: |
+          chmod +x ./dist/yt-dlp_macos_legacy
+          cp ./dist/yt-dlp_macos_legacy ./dist/yt-dlp_macos_legacy_downgraded
+          version="$(./dist/yt-dlp_macos_legacy --version)"
+          ./dist/yt-dlp_macos_legacy_downgraded -v --update-to yt-dlp/yt-dlp@2023.03.04
+          downgraded_version="$(./dist/yt-dlp_macos_legacy_downgraded --version)"
+          [[ "$version" != "$downgraded_version" ]]
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-bin-${{ github.job }}
+          path: |
+            dist/yt-dlp_macos_legacy
+          compression-level: 0
+
+  macos_legacy_14:
+    needs: process
+    if: inputs.macos_legacy
     runs-on: macos-14
 
     steps:
@@ -357,6 +407,7 @@ jobs:
         run: |
           curl "https://www.python.org/ftp/python/${PYTHON_VERSION}/python-${PYTHON_VERSION}-macos11.pkg" -o "python.pkg"
           sudo installer -pkg python.pkg -target /
+          which python3
           python3 --version
       - name: Install Requirements
         run: |

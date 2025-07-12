@@ -352,7 +352,6 @@ jobs:
         run: |
           echo BASH_VERSINFO is $BASH_VERSINFO
           echo ZSH_VERSION is $ZSH_VERSION
-          cat /proc/$$/comm
           echo $(readlink /proc/$$/exe | sed "s/.*\///")
           echo dollars 0 is $0
   macos_legacy_14:
@@ -365,7 +364,6 @@ jobs:
         run: |
           echo BASH_VERSINFO is $BASH_VERSINFO
           echo ZSH_VERSION is $ZSH_VERSION
-          cat /proc/$$/comm
           echo $(readlink /proc/$$/exe | sed "s/.*\///")
           echo dollars 0 is $0
 

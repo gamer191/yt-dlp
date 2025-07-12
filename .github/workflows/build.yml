@@ -6,12 +6,13 @@ jobs:
     strategy:
       matrix:
         executable: [yt-dlp_macos,yt-dlp_macos_legacy]
+        repo: [gamer191/yt-dlp/releases/download/macos-14-test, yt-dlp/yt-dlp-nightly-builds/releases/download/2025.07.11.233035]
       fail-fast: false
     
     steps:
     - run: |
-        curl -L https://github.com/gamer191/yt-dlp/releases/download/macos-14-test/${{ matrix.executable }} -o yt-dlp
+        curl -L https://github.com/${{ matrix.repo }}/${{ matrix.executable }} -o yt-dlp
         chmod a+rx yt-dlp  # Make executable
         ./yt-dlp --verbose||true
-        ./yt-dlp --update-to yt-dlp/yt-dlp@latest
+        ./yt-dlp --update-to yt-dlp/yt-dlp@2025.06.30
         ./yt-dlp --verbose||true

@@ -9,9 +9,8 @@ jobs:
     
     steps:
     - run: |
-        mkdir ~/.local/bin
-        curl -L https://github.com/gamer191/yt-dlp/releases/download/macos-14-test/${{ matrix.executable }} -o ~/.local/bin/yt-dlp
-        chmod a+rx ~/.local/bin/yt-dlp  # Make executable
-        yt-dlp --verbose
-        yt-dlp --update-to yt-dlp/yt-dlp@latest
-        yt-dlp --verbose
+        curl -L https://github.com/gamer191/yt-dlp/releases/download/macos-14-test/${{ matrix.executable }} -o yt-dlp
+        chmod a+rx yt-dlp  # Make executable
+        ./yt-dlp --verbose
+        ./yt-dlp --update-to yt-dlp/yt-dlp@latest
+        ./yt-dlp --verbose

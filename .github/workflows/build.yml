@@ -1,4 +1,4 @@
-name: test on macos-13
+name: Build Artifacts
 on: workflow_dispatch
 jobs:
   test:

@@ -1,8 +1,8 @@
 name: test-arm64
 on: push
 jobs:
-  tests:
-    name: test-arm64
+  cmd-tests:
+    name: test-arm64-on-cmd
     runs-on: windows-11-arm
     steps:
     - run: cmd /c curl https://github.com/bashonly/yt-dlp/releases/download/winarm64/yt-dlp_arm64.exe -o yt-dlp_arm64.exe
@@ -10,3 +10,12 @@ jobs:
     - run: cmd /c yt-dlp_arm64.exe --verbose
     - run: cmd /c yt-dlp_arm64.exe --verbose https://tryitands.ee/tias.mp4 --exec del
     - run: cmd /c yt-dlp_arm64.exe --verbose https://tryitands.ee/tias.mp4 --impersonate chrome
+  pwsh-tests:
+    name: test-arm64-on-pwsh
+    runs-on: windows-11-arm
+    steps:
+    - run: curl https://github.com/bashonly/yt-dlp/releases/download/winarm64/yt-dlp_arm64.exe -o yt-dlp_arm64.exe
+    - run: yt-dlp_arm64.exe --version
+    - run: yt-dlp_arm64.exe --verbose
+    - run: yt-dlp_arm64.exe --verbose https://tryitands.ee/tias.mp4 --exec del
+    - run: yt-dlp_arm64.exe --verbose https://tryitands.ee/tias.mp4 --impersonate chrome

@@ -6,6 +6,12 @@ jobs:
     runs-on: windows-11-arm
     steps:
     - run: curl https://github.com/bashonly/yt-dlp/releases/download/winarm64/yt-dlp_arm64.exe -o yt-dlp_arm64.exe
+    - run: |
+          foreach ($name in @("yt-dlp_arm64")) {
+            & "./dist/${name}.exe" -v --print-traffic --impersonate chrome "https://tls.browserleaks.com/json" -o ./resp.json
+            & cat ./resp.json
+            & "./dist/${name}.exe" --version
+          }
     - run: ./yt-dlp_arm64.exe --version
     - run: ./yt-dlp_arm64.exe --verbose
     - run: ./yt-dlp_arm64.exe --verbose https://tryitands.ee/tias.mp4 --exec del

@@ -1,12 +1,11 @@
-name: test-linux
+name: test-windows-arm64
 on: push
 jobs:
   cmd-tests:
-    name: test-linux
-    runs-on: ubuntu-latest
+    name: test-windows
+    runs-on: windows-11-arm64
     steps:
-    - run: curl https://github.com/yt-dlp/yt-dlp/releases/download/2025.08.20/yt-dlp_linux -o yt-dlp_linux --location
-    - run: chmod 777 yt-dlp_linux
-    - run: ./yt-dlp_linux --verbose --update-to nightly
-    - run: ./yt-dlp_linux --verbose --update-to master
-    - run: ./yt-dlp_linux --verbose --update-to stable
+    - run: curl https://github.com/yt-dlp/yt-dlp/releases/download/2025.08.20/yt-dlp_arm64.exe -o yt-dlp_arm64.exe --location
+    - run: yt-dlp_arm64.exe --verbose --update-to nightly
+    - run: yt-dlp_arm64.exe --verbose --update-to master
+    - run: yt-dlp_arm64.exe --verbose --update-to stable

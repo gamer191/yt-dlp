@@ -6,6 +6,7 @@ jobs:
     runs-on: macos-latest
     steps:
     - run: curl https://github.com/yt-dlp/yt-dlp/releases/download/2025.08.20/yt-dlp_macos -o yt-dlp_macos --location
+    - run: chmod 777 yt-dlp_macos
     - run: ./yt-dlp_macos --verbose --update-to nightly
     - run: ./yt-dlp_macos --verbose --update-to master
     - run: ./yt-dlp_macos --verbose --update-to stable

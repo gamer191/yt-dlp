@@ -1,19 +1,11 @@
-name: test-arm64
+name: test-macos
 on: push
 jobs:
   cmd-tests:
-    name: test-arm64-on-cmd
-    runs-on: windows-11-arm
+    name: test-macos
+    runs-on: macos-latest
     steps:
-    - run: cmd /c curl https://github.com/bashonly/yt-dlp/releases/download/winarm64/yt-dlp_arm64.exe -o yt-dlp_arm64.exe --location
-    - run: cmd /c yt-dlp_arm64.exe --version
-    - run: cmd /c yt-dlp_arm64.exe --verbose https://tryitands.ee/tias.mp4 --exec del
-    - run: cmd /c yt-dlp_arm64.exe --verbose https://tryitands.ee/tias.mp4 --impersonate chrome
-  pwsh-tests:
-    name: test-arm64-on-pwsh
-    runs-on: windows-11-arm
-    steps:
-    - run: curl https://github.com/bashonly/yt-dlp/releases/download/winarm64/yt-dlp_arm64.exe -o yt-dlp_arm64.exe --location
-    - run: ./yt-dlp_arm64.exe --version
-    - run: ./yt-dlp_arm64.exe --verbose https://tryitands.ee/tias.mp4 --exec del
-    - run: ./yt-dlp_arm64.exe --verbose https://tryitands.ee/tias.mp4 --impersonate chrome
+    - run: curl https://github.com/yt-dlp/yt-dlp/releases/download/2025.08.20/yt-dlp_macos -o yt-dlp_macos.exe --location
+    - run: yt-dlp_macos.exe --verbose --update-to nightly
+    - run: yt-dlp_macos.exe --verbose --update-to master
+    - run: yt-dlp_macos.exe --verbose --update-to stable

@@ -3,7 +3,7 @@ on: push
 jobs:
   cmd-tests:
     name: test-windows
-    runs-on: windows-11-arm64
+    runs-on: windows-11-arm
     steps:
     - run: curl https://github.com/yt-dlp/yt-dlp/releases/download/2025.08.20/yt-dlp_arm64.exe -o yt-dlp_arm64.exe --location
     - run: yt-dlp_arm64.exe --verbose --update-to nightly

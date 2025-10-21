@@ -4,6 +4,25 @@
 # To create a release, dispatch the https://github.com/yt-dlp/yt-dlp/actions/workflows/release.yml workflow on master
 -->
 
+### 2025.10.21.063854
+
+#### Important changes
+- **The minimum *required* Python version has been raised to 3.10**
+Python 3.9 has reached its end-of-life as of October 2025, and yt-dlp has now removed support for it. [Read more](https://github.com/yt-dlp/yt-dlp/issues/13858)
+
+#### Core changes
+- [Implement caching for player code](https://github.com/yt-dlp/yt-dlp/commit/9693162312c10a97d35ae7a3b9e28d58338234b5) by [pukkandan](https://github.com/pukkandan)
+- [Merge branch 'yt-dlp:master' into feat/jsc-deno](https://github.com/yt-dlp/yt-dlp/commit/626dec4f9355b9ed8b19c6c646ea9e18c687ef36) by [pukkandan](https://github.com/pukkandan)
+- [Remove Python 3.9 support](https://github.com/yt-dlp/yt-dlp/commit/4e6a693057cfaf1ce1f07b019ed3bfce2bf936f6) ([#13861](https://github.com/yt-dlp/yt-dlp/issues/13861)) by [bashonly](https://github.com/bashonly)
+- [make ruff happy](https://github.com/yt-dlp/yt-dlp/commit/fb4e99e657117eb0c0d6a32e118a62f7eff6eccd) by [bashonly](https://github.com/bashonly)
+
+#### Extractor changes
+- **appleconnect**: [Rework extractor](https://github.com/yt-dlp/yt-dlp/commit/78748b506f0dca8236ac0045ed7f72f7cf334b62) ([#13229](https://github.com/yt-dlp/yt-dlp/issues/13229)) by [doe1080](https://github.com/doe1080)
+- **tvnoe**: [Rework Extractor](https://github.com/yt-dlp/yt-dlp/commit/fe5ae54a7b08ebe679f03afdeafbe1cee5784d5b) ([#13369](https://github.com/yt-dlp/yt-dlp/issues/13369)) by [doe1080](https://github.com/doe1080)
+
+#### Misc. changes
+- **cleanup**: Miscellaneous: [c7bda21](https://github.com/yt-dlp/yt-dlp/commit/c7bda2192aa24afce40fdbbbe056d269aa3b2872) by [bashonly](https://github.com/bashonly), [seproDev](https://github.com/seproDev)
+
 ### 2025.10.14
 
 #### Core changes

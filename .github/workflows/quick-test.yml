@@ -49,7 +49,7 @@ jobs:
     - name: Make lazy extractors
       run: python ./devscripts/make_lazy_extractors.py
     - name: Run ruff
-      run: ruff check--preview  --output-format github .
+      run: ruff check --preview --output-format github .
     - name: Run autopep8
       run: autopep8 --diff .
     - name: Check file mode

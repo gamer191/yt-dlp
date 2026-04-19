@@ -1698,8 +1698,12 @@ class TikTokLiveIE(TikTokBaseIE):
 
         # If uploader is a guest on another's livestream, primary endpoint will not have m3u8 URLs
         if not traverse_obj(formats, lambda _, v: v['ext'] == 'mp4'):
-            live_info = merge_dicts(live_info, self._call_api(
-                'https://www.tiktok.com/api/live/detail/', 'roomID', room_id, uploader, key='LiveRoomInfo'))
+            try:
+                live_info = merge_dicts(live_info, self._call_api(
+                    'https://www.tiktok.com/api/live/detail/', 'roomID', room_id, uploader, key='LiveRoomInfo'))
+            except (ExtractorError, UserNotLive):
+                if not formats:
+                    raise
             if url_or_none(live_info.get('liveUrl')):
                 formats.append({
                     'url': live_info['liveUrl'],

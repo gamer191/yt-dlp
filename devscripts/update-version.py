@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 # Allow direct execution
+exit()
 import os
 import sys
 

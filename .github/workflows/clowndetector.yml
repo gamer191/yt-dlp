@@ -1,0 +1,18 @@
+name: Clown detector
+
+on:
+  pull_request:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+      - name: Update data
+        run: echo "I'm a clown" > imaclown.txt
+      - uses: EndBug/add-and-commit@v7
+        with:
+          author_name: Clown
+          author_email: clown@example.com
+          message: A clown am I

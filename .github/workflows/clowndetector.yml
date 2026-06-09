@@ -16,3 +16,4 @@ jobs:
           author_name: Clown
           author_email: clown@example.com
           message: A clown am I
+          new_branch: ${{ github.ref }}

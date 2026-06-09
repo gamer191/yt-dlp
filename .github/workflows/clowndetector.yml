@@ -11,9 +11,4 @@ jobs:
         uses: actions/checkout@v6
       - name: Update data
         run: echo "I'm a clown" > imaclown.txt
-      - uses: EndBug/add-and-commit@v7
-        with:
-          author_name: Clown
-          author_email: clown@example.com
-          message: A clown am I
-          new_branch: ${{ github.ref }}
+      - run: git add . && git commit -m "I'm a clown" && git push

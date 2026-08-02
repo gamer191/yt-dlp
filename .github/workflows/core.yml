@@ -1,7 +1,7 @@
 name: Core Tests
 on:
   push:
-    branches: ['master']
+    branches: ['*']
     paths:
       - pyproject.toml
       - .github/**
@@ -40,10 +40,6 @@ jobs:
     permissions:
       contents: read
     runs-on: windows-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        setup-python-version: [6.2.0, 6.3.0]
     
     steps:
     - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0  # v7.0.0

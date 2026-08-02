@@ -7,8 +7,8 @@ jobs:
     steps:
     - run: curl https://downloads.python.org/pypy/pypy3.11-v7.3.23-win64.zip -O
     - run: tar -xf pypy3.11-v7.3.23-win64.zip
-    - run: pypy3.11-v7.3.23-win64/pypy3.11-v7.3.23-win64/pypy.exe -m ensurepip
-    - run: pypy3.11-v7.3.23-win64/pypy3.11-v7.3.23-win64/pypy.exe -m pip install -U pip==26.1.2
-    - run: pypy3.11-v7.3.23-win64/pypy3.11-v7.3.23-win64/pypy.exe -m pip install -U pip==26.2
-    - run: pypy3.11-v7.3.23-win64/pypy3.11-v7.3.23-win64/pypy.exe -m pip install -U pip==26.1.2
-    - run: pypy3.11-v7.3.23-win64/pypy3.11-v7.3.23-win64/pypy.exe -m pip
+    - run: .\pypy3.11-v7.3.23-win64\pypy3.11-v7.3.23-win64\pypy.exe -m ensurepip
+    - run: .\pypy3.11-v7.3.23-win64\pypy3.11-v7.3.23-win64\pypy.exe -m pip install -U pip==26.1.2
+    - run: .\pypy3.11-v7.3.23-win64\pypy3.11-v7.3.23-win64\pypy.exe -m pip install -U pip==26.2
+    - run: .\pypy3.11-v7.3.23-win64\pypy3.11-v7.3.23-win64\pypy.exe -m pip install -U pip==26.1.2
+    - run: .\pypy3.11-v7.3.23-win64\pypy3.11-v7.3.23-win64\pypy.exe -m pip

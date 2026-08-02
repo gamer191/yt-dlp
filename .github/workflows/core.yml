@@ -47,10 +47,10 @@ jobs:
         fetch-depth: 0
         persist-credentials: false
 
-    - name: Set up Python pypi-3.11
+    - name: Set up Python pypy-3.11
       uses: actions/setup-python@v6.2.0
       with:
-        python-version: pypi-3.11
+        python-version: pypy-3.11
         allow-prereleases: true
 
     - name: Install test requirements (PyPy)

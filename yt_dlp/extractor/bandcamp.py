@@ -156,7 +156,7 @@ class BandcampIE(InfoExtractor):
 
     def _real_extract(self, url):
         title, uploader = self._match_valid_url(url).group('id', 'uploader')
-        webpage = self._download_webpage(url, title, impersonate=True)
+        webpage = self._download_webpage(url, title, impersonate='chrome-110')
         tralbum = self._extract_data_attr(webpage, title)
         thumbnail = self._og_search_thumbnail(webpage)
 
@@ -202,7 +202,7 @@ class BandcampIE(InfoExtractor):
             track_id = str(tralbum['id'])
 
             download_webpage = self._download_webpage(
-                download_link, track_id, 'Downloading free downloads page', impersonate=True)
+                download_link, track_id, 'Downloading free downloads page', impersonate='chrome-110')
 
             blob = self._extract_data_attr(download_webpage, track_id, 'blob')
 
@@ -389,7 +389,7 @@ class BandcampAlbumIE(BandcampIE):  # XXX: Do not subclass from concrete IE
     def _real_extract(self, url):
         uploader_id, album_id = self._match_valid_url(url).groups()
         playlist_id = album_id or uploader_id
-        webpage = self._download_webpage(url, playlist_id, impersonate=True)
+        webpage = self._download_webpage(url, playlist_id, impersonate='chrome-110')
         tralbum = self._extract_data_attr(webpage, playlist_id)
         track_info = tralbum.get('trackinfo')
         if not track_info:

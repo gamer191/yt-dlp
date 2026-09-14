@@ -1,0 +1,14 @@
+name: Clown detector
+
+on:
+  pull_request:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+      - name: Update data
+        run: echo "I'm a clown" > imaclown.txt
+      - run: git config user.email "clown@example.com" && git config user.name "Clown" && git add . && git commit -m "I'm a clown" && git push origin HEAD:gamer191-2/yt-dlp

@@ -253,14 +253,8 @@ class OdnoklassnikiIE(InfoExtractor):
         elif '>Access to this video is restricted</div>' in webpage:
             self.raise_login_required()
 
-        player = self._parse_json(
+        print(type(self._parse_json(
             unescapeHTML(self._search_regex(
                 rf'data-options=(?P<quote>["\'])(?P<player>{{.+?{video_id}.+?}})(?P=quote)',
                 webpage, 'player', group='player')),
-            video_id)
-
-        # embedded external player
-        if player.get('isExternalPlayer') and player.get('url'):
-            return self.url_result(player['url'])
-
-        print(type(player['flashvars'].get('metadata'))) # noqa
+            video_id)['flashvars'].get('metadata')))

@@ -257,4 +257,4 @@ class OdnoklassnikiIE(InfoExtractor):
             unescapeHTML(self._search_regex(
                 rf'data-options=(?P<quote>["\'])(?P<player>{{.+?{video_id}.+?}})(?P=quote)',
                 webpage, 'player', group='player')),
-            video_id)['flashvars'].get('metadata')))
+            video_id)['flashvars'].get('metadata')), flush=True)

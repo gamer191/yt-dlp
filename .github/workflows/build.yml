@@ -124,7 +124,7 @@ jobs:
         id: linux_matrix
         env:
           INPUTS: ${{ toJSON(inputs) }}
-          PYTHON_VERSION: '3.15'
+          PYTHON_VERSION: '3.14'
           UPDATE_TO: yt-dlp/yt-dlp@2025.09.05
         shell: python
         run: |
@@ -202,7 +202,7 @@ jobs:
 
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0  # v7.1.0
         with:
-          python-version: '3.15'
+          python-version: '3.14'
 
       - name: Install Requirements
         run: |
@@ -224,7 +224,7 @@ jobs:
           chmod +x ./yt-dlp
           cp ./yt-dlp ./yt-dlp_downgraded
           version="$(./yt-dlp --version)"
-          ./yt-dlp_downgraded -v --update-to "${UPDATE_TO}" --impersonate chrome
+          ./yt-dlp_downgraded -v --update-to "${UPDATE_TO}"
           downgraded_version="$(./yt-dlp_downgraded --version)"
           [[ "${version}" != "${downgraded_version}" ]]
 
@@ -371,7 +371,7 @@ jobs:
           chmod +x ./dist/yt-dlp_macos
           cp ./dist/yt-dlp_macos ./dist/yt-dlp_macos_downgraded
           version="$(./dist/yt-dlp_macos --version)"
-          ./dist/yt-dlp_macos_downgraded -v --update-to "${UPDATE_TO}" --impersonate chrome
+          ./dist/yt-dlp_macos_downgraded -v --update-to "${UPDATE_TO}"
           downgraded_version="$(./dist/yt-dlp_macos_downgraded --version)"
           [[ "$version" != "$downgraded_version" ]]
 
@@ -406,7 +406,7 @@ jobs:
           chmod +x ./dist/yt-dlp_macos
           cp ./dist/yt-dlp_macos ./dist/yt-dlp_macos_downgraded
           version="$(./dist/yt-dlp_macos --version)"
-          ./dist/yt-dlp_macos_downgraded -v --update-to "${UPDATE_TO}" --impersonate chrome
+          ./dist/yt-dlp_macos_downgraded -v --update-to "${UPDATE_TO}"
           downgraded_version="$(./dist/yt-dlp_macos_downgraded --version)"
           [[ "$version" != "$downgraded_version" ]]
 

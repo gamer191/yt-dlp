@@ -224,7 +224,7 @@ jobs:
           chmod +x ./yt-dlp
           cp ./yt-dlp ./yt-dlp_downgraded
           version="$(./yt-dlp --version)"
-          ./yt-dlp_downgraded -v --update-to "${UPDATE_TO}"
+          ./yt-dlp_downgraded -v --update-to "${UPDATE_TO}" --impersonate chrome
           downgraded_version="$(./yt-dlp_downgraded --version)"
           [[ "${version}" != "${downgraded_version}" ]]
 
@@ -371,7 +371,7 @@ jobs:
           chmod +x ./dist/yt-dlp_macos
           cp ./dist/yt-dlp_macos ./dist/yt-dlp_macos_downgraded
           version="$(./dist/yt-dlp_macos --version)"
-          ./dist/yt-dlp_macos_downgraded -v --update-to "${UPDATE_TO}"
+          ./dist/yt-dlp_macos_downgraded -v --update-to "${UPDATE_TO}" --impersonate chrome
           downgraded_version="$(./dist/yt-dlp_macos_downgraded --version)"
           [[ "$version" != "$downgraded_version" ]]
 
@@ -406,7 +406,7 @@ jobs:
           chmod +x ./dist/yt-dlp_macos
           cp ./dist/yt-dlp_macos ./dist/yt-dlp_macos_downgraded
           version="$(./dist/yt-dlp_macos --version)"
-          ./dist/yt-dlp_macos_downgraded -v --update-to "${UPDATE_TO}"
+          ./dist/yt-dlp_macos_downgraded -v --update-to "${UPDATE_TO}" --impersonate chrome
           downgraded_version="$(./dist/yt-dlp_macos_downgraded --version)"
           [[ "$version" != "$downgraded_version" ]]
 

@@ -124,7 +124,7 @@ jobs:
         id: linux_matrix
         env:
           INPUTS: ${{ toJSON(inputs) }}
-          PYTHON_VERSION: '3.14'
+          PYTHON_VERSION: '3.15'
           UPDATE_TO: yt-dlp/yt-dlp@2025.09.05
         shell: python
         run: |
@@ -202,7 +202,7 @@ jobs:
 
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0  # v7.1.0
         with:
-          python-version: '3.14'
+          python-version: '3.15'
 
       - name: Install Requirements
         run: |
@@ -441,7 +441,7 @@ jobs:
 
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0  # v7.1.0
         with:
-          python-version: '3.14'
+          python-version: '3.15'
           architecture: ${{ matrix.arch }}
           check-latest: true
 
@@ -481,7 +481,6 @@ jobs:
           Compress-Archive -Path ./dist/yt-dlp${Env:SUFFIX}/* -DestinationPath ./dist/yt-dlp_win${Env:SUFFIX}.zip
 
       - name: Verify --update-to
-        if: vars.UPDATE_TO_VERIFICATION
         shell: pwsh
         run: |
           $ErrorActionPreference = "Stop"
@@ -489,7 +488,7 @@ jobs:
           $name = "yt-dlp${Env:SUFFIX}"
           Copy-Item "./dist/${name}.exe" "./dist/${name}_downgraded.exe"
           $version = & "./dist/${name}.exe" --version
-          & "./dist/${name}_downgraded.exe" -v --update-to "${Env:UPDATE_TO}"
+          & "./dist/${name}_downgraded.exe" -v --update-to "${Env:UPDATE_TO}" --impersonate chrome
           $downgraded_version = & "./dist/${name}_downgraded.exe" --version
           if ($version -eq $downgraded_version) {
             exit 1

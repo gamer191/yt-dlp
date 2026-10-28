@@ -67,3 +67,4 @@ jobs:
     - name: Check file mode
       shell: bash
       run: git ls-files --format="%(objectmode) %(path)" yt_dlp/ | ( ! grep -v "^100644" )
+    - uses: get-woke/woke-action@v0

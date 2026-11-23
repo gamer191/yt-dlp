@@ -2698,7 +2698,7 @@ class YoutubeIE(YoutubeBaseInfoExtractor):
             'html5Preference': 'HTML5_PREF_WANTS',
         }
         if sts is not None:
-            context['signatureTimestamp'] = sts
+            context['signatureTimestamp'] = int(str(sts)[:5]) # XXX: Temporary workaround for tcl variant issues, remove when adding tcl variant support
         if encrypted_context:
             context['encryptedHostFlags'] = encrypted_context
 
